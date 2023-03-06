@@ -12,16 +12,23 @@
         <router-link to="/list-store">produtos</router-link>
       </h4>
     </div>
-    <div class="auth">
+    <div class="auth-cart">
+      <ShoppingBag />
       <h3>
-        <router-link to="/login">Login</router-link>
+        <!-- <router-link to="/login">Login</router-link> -->
+        <q-chip>
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+          </q-avatar>
+          Login
+        </q-chip>
       </h3>
     </div>
   </div>
 </template>
 
 <script setup lang="ts" name="HeaderPage">
-// const snippets = 'Snippets';
+import { ShoppingBag } from 'lucide-vue-next';
 </script>
 
 <style lang="scss">
@@ -30,12 +37,18 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 16px;
+  padding: 1rem;
 
-  height: 80px;
+  height: 5rem;
 }
 
 .logo {
   height: 100%;
+}
+
+.auth-cart {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 </style>
