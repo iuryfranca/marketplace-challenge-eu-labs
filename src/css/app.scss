@@ -1,1 +1,102 @@
 // app global css in SCSS form
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+
+.contentPage {
+  margin: 0 auto;
+  max-width: 1366px;
+  padding: 0 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  color: $primary-font;
+}
+
+body {
+  background: #fafafa;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.875rem /* 30px */;
+  line-height: 2.25rem /* 36px */;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem /* 24px */;
+  line-height: 2rem /* 32px */;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.25rem /* 20px */;
+  line-height: 1.75rem /* 28px */;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.125rem /* 18px */;
+  line-height: 1.75rem /* 28px */;
+  font-weight: 600;
+}
+
+/* buttons */
+button,
+.btn {
+  background: $secondary;
+  border-radius: 8px;
+  border: 0;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+}
+
+button:hover,
+.btn:hover {
+  background: $primary;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.5;
+  color: $primary;
+  background: $secondary;
+  cursor: not-allowed;
+}
+
+/* forms */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 1px 2px 3px rgba(50, 50, 50, 0.05);
+  border: 1px solid $secondary;
+  background: white;
+}
+
+input,
+textarea {
+  border: 0;
+  border-bottom: 1px solid $secondary;
+  padding: 10px;
+  outline: none;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+
+/* error text */
+.error {
+  color: $warning;
+  font-size: 14px;
+  margin: 16px 0;
+}
