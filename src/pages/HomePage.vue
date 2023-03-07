@@ -30,7 +30,8 @@ const card = {
   flex-direction: row;
   flex-wrap: wrap;
 
-  margin-top: 4rem;
+  margin-top: 3rem;
+  padding-top: 1rem;
   gap: 1rem;
 }
 </style>

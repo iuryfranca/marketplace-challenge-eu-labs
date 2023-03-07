@@ -31,9 +31,9 @@
 
 <script setup lang="ts" name="CardProduct">
 import { PropType } from 'vue';
-import { CardProductProps } from 'src/composables/_types';
+import { CardProductProps } from 'src/types/_types';
 import { Plus } from 'lucide-vue-next';
-import { priceFormatter } from 'src/libs/utils';
+import { priceFormatter } from 'src/lib/utils';
 
 defineProps({
   product: {
@@ -47,7 +47,7 @@ defineProps({
   display: flex;
   flex-direction: column;
 
-  max-width: 20rem;
+  max-width: 16rem;
   border: 2px solid black;
   // border-radius: 0.25rem;
   box-shadow: 1px 1px 0px 0px #000000;
@@ -95,7 +95,7 @@ defineProps({
   justify-content: center;
 
   width: 100%;
-  max-height: 20rem;
+  max-height: 16rem;
   padding: 1rem;
 
   overflow: hidden;
