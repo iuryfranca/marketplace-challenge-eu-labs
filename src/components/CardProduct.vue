@@ -49,23 +49,19 @@ defineProps({
 
   max-width: 14rem;
   border: 2px solid black;
-  // border-radius: 0.25rem;
-  box-shadow: 1px 1px 0px 0px #000000;
 
   cursor: pointer;
   position: relative;
+
+  box-shadow: 1px 1px 0px 0px #000000;
+  transition: all ease-out 0.25s;
 
   background-color: $primary;
 }
 
 .card-wrapper:hover {
   box-shadow: 0.2rem 0.2rem rgb(0, 0, 0);
-  transition: all ease 0.25s;
-
-  img {
-    transform: scale(1.1);
-    transition: all ease 1s;
-  }
+  transition: all ease-in 0.25s;
 }
 
 .card-title {
@@ -95,15 +91,25 @@ defineProps({
   justify-content: center;
 
   width: 100%;
-  height: 100%;
-  // padding: 1rem;
+  height: 14rem;
 
   overflow: hidden;
   background-color: white;
 }
 
 .image-product-wrapper {
-  max-height: 8rem;
+  max-height: 6rem;
+}
+
+img {
+  transition: all ease-out 1s;
+}
+
+.image-content:hover {
+  img {
+    transform: scale(1.5);
+    transition: all ease 0.5s;
+  }
 }
 
 .card-content {

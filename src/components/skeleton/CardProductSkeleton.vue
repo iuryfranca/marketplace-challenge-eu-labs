@@ -1,15 +1,15 @@
 <template>
   <div class="card-wrapper-skeleton">
-    <div class="card-title">
+    <div class="card-title-skeleton">
       <q-skeleton type="text" class="q-px-xl" />
     </div>
 
-    <div class="image-content">
+    <div class="image-content-skeleton">
       <q-skeleton square height="14rem" width="100%" />
     </div>
 
     <div class="card-content">
-      <div class="card-description">
+      <div class="card-description-skeleton">
         <q-skeleton type="text" />
         <q-skeleton type="text" />
       </div>
@@ -45,7 +45,7 @@
   transition: all ease 0.25s;
 }
 
-.card-title {
+.card-title-skeleton {
   position: absolute;
 
   top: -1rem;
@@ -66,7 +66,7 @@
   white-space: nowrap;
 }
 
-.image-content {
+.image-content-skeleton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +87,7 @@
   border-top: 2px solid #000000;
 }
 
-.card-description {
+.card-description-skeleton {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

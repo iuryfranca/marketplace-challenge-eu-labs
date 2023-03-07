@@ -7,13 +7,9 @@
           alt="banner americanas"
           height="48"
         />
-        <!-- <img
-          src="https://images-americanas.b2w.io/spacey/acom/2023/03/01/pascoa23-topinho-home-mobile-648x54px-afd913c8049b.png"
-          alt="banner americanas"
-          height="48"
-        /> -->
       </div>
       <HeaderPage />
+      <div class="banner-bottom-header">desafio front end EuLabs</div>
     </q-header>
     <q-page-container class="contentPage">
       <router-view />
@@ -29,14 +25,28 @@ import HeaderPage from 'src/components/HeaderPage.vue';
 .q-header {
   background-color: #f80032;
   box-shadow: rgb(0 0 0 / 12%) 0px 10px 15px;
-  border-bottom: 2px solid #000000;
+  // border-bottom: 2px solid #000000;
 }
 
 .banner-top-header {
   height: 3rem;
-  background-color: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: white;
+}
+
+.banner-bottom-header {
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #000000;
+  font-weight: 600;
+  background-color: white;
 }
 </style>
