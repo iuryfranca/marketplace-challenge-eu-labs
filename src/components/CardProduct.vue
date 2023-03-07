@@ -53,15 +53,15 @@ defineProps({
   cursor: pointer;
   position: relative;
 
-  box-shadow: 1px 1px 0px 0px #000000;
-  transition: all ease-out 0.25s;
+  box-shadow: 0.125rem 0.125rem 0px 0px #000000;
+  transition: all ease-out 0.2s;
 
   background-color: $primary;
 }
 
 .card-wrapper:hover {
-  box-shadow: 0.2rem 0.2rem rgb(0, 0, 0);
-  transition: all ease-in 0.25s;
+  box-shadow: 0.25rem 0.25rem rgb(0, 0, 0);
+  transition: all ease-in 0.2s;
 }
 
 .card-title {
