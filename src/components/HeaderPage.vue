@@ -7,15 +7,14 @@
         class="logo"
       />
     </router-link>
-    <div class="routers">
+    <!-- <div class="routers">
       <h4>
         <router-link to="/list-store">produtos</router-link>
       </h4>
-    </div>
+    </div> -->
     <div class="auth-cart">
       <ShoppingBag />
       <h3>
-        <!-- <router-link to="/login">Login</router-link> -->
         <q-chip>
           <q-avatar>
             <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
@@ -38,7 +37,6 @@ import { ShoppingBag } from 'lucide-vue-next';
   justify-content: space-between;
 
   padding: 1rem;
-
   height: 5rem;
 }
 

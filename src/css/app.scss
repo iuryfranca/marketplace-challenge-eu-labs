@@ -3,7 +3,7 @@
 
 .contentPage {
   margin: 0 auto;
-  max-width: 1366px;
+  max-width: 1200px;
   padding: 0 1.25rem; //20px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 body {
-  background: #fafafa;
+  background-color: #feebfc;
 }
 
 a {
@@ -49,19 +49,19 @@ h4 {
 /* buttons */
 button,
 .btn {
-  background: $secondary;
-  border-radius: 0.5rem; //8px;
-  border: 0;
-  padding: 0.5rem 0.75rem; // 8px 12px;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-block;
+  background: #fe3558;
+
+  border: 2px solid;
+  padding: 5px;
+
+  font-size: 1rem;
+  box-shadow: 2px 2px 0px 0px #000000;
 }
 
 button:hover,
 .btn:hover {
-  background: $primary;
-  color: white;
+  background: rgba(0, 0, 0, 0.164);
+  // color: rgba(0, 0, 0, 0.164);
 }
 
 button:disabled {
