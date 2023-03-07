@@ -4,21 +4,9 @@
       <img src="../assets/logo-americanas.svg" />
       <h1>mktplace</h1>
     </router-link>
-    <!-- <div class="routers">
-      <h4>
-        <router-link to="/list-store">produtos</router-link>
-      </h4>
-    </div> -->
+
     <div class="auth-cart">
       <ShoppingBag />
-      <!-- <h3>
-        <q-chip>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-          </q-avatar>
-          Login
-        </q-chip>
-      </h3> -->
     </div>
   </div>
 </template>

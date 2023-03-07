@@ -7,7 +7,7 @@
     <div class="image-content">
       <img
         :src="product?.image"
-        alt="Product Image"
+        :alt="`Product Image: ${product?.title}`"
         class="image-product-wrapper"
       />
     </div>
@@ -17,12 +17,12 @@
         <span>{{ product?.description }}</span>
       </div>
 
-      <q-separator spaced color="#000000" />
+      <div class="separator" />
 
       <div class="cart-buttons-group">
         <h2>{{ priceFormatter(product?.price || 0) }}</h2>
         <button class="button-icons">
-          <Plus />
+          <Plus color="#000000" />
         </button>
       </div>
     </div>
@@ -78,7 +78,7 @@ defineProps({
   z-index: 10;
 
   background: $primary;
-  border: 2px solid;
+  border: 2px solid #000000;
 
   font-size: 1rem;
   box-shadow: 2px 2px 0px 0px #000000;
@@ -104,16 +104,25 @@ defineProps({
 
 .image-product-wrapper {
   height: 100%;
-  width: auto;
-  display: block;
 }
 
 .card-content {
-  // padding: 1rem;
+  border-top: 2px solid #000000;
 }
 
 .card-description {
-  padding: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  max-height: 50px;
+  margin: 1rem 0.5rem;
+}
+
+.separator {
+  border: 0.5px solid #000000;
+  margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
 .cart-buttons-group {
@@ -130,6 +139,7 @@ defineProps({
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   padding: 0.5rem;
 }

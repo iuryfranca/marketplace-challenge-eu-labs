@@ -31,7 +31,6 @@ const card = {
   flex-wrap: wrap;
 
   margin-top: 4rem;
-
   gap: 1rem;
 }
 </style>
