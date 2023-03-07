@@ -8,7 +8,7 @@
       <img
         :src="product?.image"
         :alt="`Product Image: ${product?.title}`"
-        class="image-product-wrapper"
+        class="image-product"
       />
     </div>
 
@@ -19,9 +19,9 @@
 
       <div class="separator" />
 
-      <div class="cart-buttons-group">
+      <div class="flex justify-between items-center q-pa-sm">
         <h2>{{ priceFormatter(product?.price || 0) }}</h2>
-        <button class="button-icons">
+        <button class="btn-add flex justify-center">
           <Plus color="#000000" />
         </button>
       </div>
@@ -97,7 +97,7 @@ defineProps({
   background-color: white;
 }
 
-.image-product-wrapper {
+.image-product {
   max-height: 6rem;
 }
 
@@ -131,26 +131,7 @@ img {
   margin: 0 0.5rem 0.5rem 0.5rem;
 }
 
-.cart-buttons-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem;
-
-  width: 100%;
-}
-
-.button-icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  padding: 0.5rem;
-}
-
-.button-icons:hover {
+.btn-add:hover {
   svg {
     transition: all ease 0.25s;
     transform: rotate(90deg);

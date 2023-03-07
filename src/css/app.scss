@@ -47,21 +47,16 @@ h4 {
 }
 
 /* buttons */
-button,
-.btn {
+.btn-add {
   background: $primary;
 
   border: 2px solid #000000;
-  padding: 5px;
+  padding: 0.5rem;
+
+  cursor: pointer;
 
   font-size: 1rem;
   box-shadow: 2px 2px 0px 0px #000000;
-}
-
-button:hover,
-.btn:hover {
-  // background: rgba(0, 0, 0, 0.164);
-  // color: rgba(0, 0, 0, 0.164);
 }
 
 button:disabled {
@@ -69,29 +64,6 @@ button:disabled {
   color: $primary;
   background: $secondary;
   cursor: not-allowed;
-}
-
-/* forms */
-form {
-  max-width: 25rem; //400px;
-  margin: 0 auto;
-  padding: 2rem; //32px;
-  border-radius: 0.5rem; //8px;
-  box-shadow: 1px 2px 3px rgba(50, 50, 50, 0.05);
-  border: 1px solid $secondary;
-  background: white;
-}
-
-input,
-textarea {
-  border: 0;
-  border-bottom: 1px solid $secondary;
-  padding: 0.75rem; //12px
-  outline: none;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 1.25rem auto; //20px auto
 }
 
 /* error text */

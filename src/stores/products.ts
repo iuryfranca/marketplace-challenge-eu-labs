@@ -5,8 +5,10 @@ import { CardProductProps } from '../types/_types';
 export const useProductsStore = defineStore('products', {
   state: () => ({
     products: [] as CardProductProps[],
+    productsFiltered: [] as CardProductProps[],
     loading: false as boolean,
     error: null as string | unknown,
+    searchTerm: '' as string,
   }),
   getters: {
     // Ordenar exibição por nome de produtos
@@ -42,6 +44,18 @@ export const useProductsStore = defineStore('products', {
             this.loading = false;
           }, 2500);
         });
+    },
+
+    getSearchFilter(searchTerm: string | null) {
+      console.log(searchTerm);
+      this.productsFiltered = this.products.filter((product) =>
+        searchTerm === null || searchTerm === ''
+          ? (this.productsFiltered = [])
+          : Object.values(product)
+              .join('')
+              .toLowerCase()
+              .includes(searchTerm?.toLowerCase() as string)
+      );
     },
   },
 });

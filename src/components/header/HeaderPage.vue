@@ -4,7 +4,7 @@
       <img src="../../assets/logo-americanas.svg" />
       <h1>mktplace</h1>
     </router-link>
-
+    <SearchInput />
     <div class="auth-cart">
       <ShoppingBag />
     </div>
@@ -13,6 +13,7 @@
 
 <script setup lang="ts" name="HeaderPage">
 import { ShoppingBag } from 'lucide-vue-next';
+import SearchInput from 'components/SearchInput.vue';
 </script>
 
 <style lang="scss">

@@ -1,7 +1,12 @@
 <template>
   <q-page>
     <div class="home-presentation-wrapper">
-      <div v-for="product in products" :key="product.id">
+      <div
+        v-for="product in productsFiltered.length > 0
+          ? productsFiltered
+          : products"
+        :key="product.id"
+      >
         <CardProduct v-if="products && !loading" :product="product" />
         <CardProductSkeleton v-else />
       </div>
@@ -16,7 +21,9 @@ import CardProduct from 'src/components/CardProduct.vue';
 import { storeToRefs } from 'pinia';
 import { useProductsStore } from '../stores/products';
 
-const { products, loading, error } = storeToRefs(useProductsStore());
+const { products, productsFiltered, loading, error } = storeToRefs(
+  useProductsStore()
+);
 const { fetchProducts } = useProductsStore();
 
 fetchProducts();
@@ -28,7 +35,7 @@ fetchProducts();
   flex-direction: row;
   flex-wrap: wrap;
 
-  justify-content: flex-start;
+  justify-content: space-between;
 
   margin-top: 3rem;
   padding-top: 1rem;
