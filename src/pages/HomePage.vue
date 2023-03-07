@@ -1,27 +1,25 @@
 <template>
   <q-page>
     <div class="home-presentation-wrapper">
-      <card-product :product="card" />
+      <div v-for="product in products" :key="product.id">
+        <CardProduct v-if="products && !loading" :product="product" />
+        <CardProductSkeleton v-else />
+      </div>
     </div>
+    <div class="error">{{ error }}</div>
   </q-page>
 </template>
 
 <script setup lang="ts">
+import CardProductSkeleton from 'src/components/skeleton/CardProductSkeleton.vue';
 import CardProduct from 'src/components/CardProduct.vue';
+import { storeToRefs } from 'pinia';
+import { useProductsStore } from '../stores/products';
 
-const card = {
-  id: 1,
-  title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-  price: 109.95,
-  description:
-    'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday',
-  category: "men's clothing",
-  image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-  rating: {
-    rate: 3.9,
-    count: 120,
-  },
-};
+const { products, loading, error } = storeToRefs(useProductsStore());
+const { fetchProducts } = useProductsStore();
+
+fetchProducts();
 </script>
 
 <style lang="scss">
@@ -30,8 +28,14 @@ const card = {
   flex-direction: row;
   flex-wrap: wrap;
 
+  justify-content: flex-start;
+
   margin-top: 3rem;
   padding-top: 1rem;
-  gap: 1rem;
+  gap: 4rem;
+
+  @media (max-width: $breakpoint-md-min) {
+    justify-content: center;
+  }
 }
 </style>

@@ -1,55 +1,37 @@
 <template>
-  <div class="card-wrapper">
+  <div class="card-wrapper-skeleton">
     <div class="card-title">
-      {{ product?.title }}
+      <q-skeleton type="text" class="q-px-xl" />
     </div>
 
-    <div class="q-pt-xl q-pa-md image-content">
-      <img
-        :src="product?.image"
-        :alt="`Product Image: ${product?.title}`"
-        class="image-product-wrapper"
-      />
+    <div class="image-content">
+      <q-skeleton square height="14rem" width="100%" />
     </div>
 
     <div class="card-content">
       <div class="card-description">
-        <span>{{ product?.description }}</span>
+        <q-skeleton type="text" />
+        <q-skeleton type="text" />
       </div>
 
       <div class="separator" />
 
       <div class="cart-buttons-group">
-        <h2>{{ priceFormatter(product?.price || 0) }}</h2>
-        <button class="button-icons">
-          <Plus color="#000000" />
-        </button>
+        <q-skeleton type="QBtn" />
+        <q-skeleton type="QBtn" width="2.5rem" />
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts" name="CardProduct">
-import { PropType } from 'vue';
-import { CardProductProps } from 'src/types/_types';
-import { Plus } from 'lucide-vue-next';
-import { priceFormatter } from 'src/lib/utils';
-
-defineProps({
-  product: {
-    type: Object as PropType<CardProductProps>,
-  },
-});
-</script>
-
 <style lang="scss">
-.card-wrapper {
+.card-wrapper-skeleton {
   display: flex;
   flex-direction: column;
 
-  max-width: 14rem;
+  width: 14rem;
+
   border: 2px solid black;
-  // border-radius: 0.25rem;
   box-shadow: 1px 1px 0px 0px #000000;
 
   cursor: pointer;
@@ -58,14 +40,9 @@ defineProps({
   background-color: $primary;
 }
 
-.card-wrapper:hover {
+.card-wrapper-skeleton:hover {
   box-shadow: 0.2rem 0.2rem rgb(0, 0, 0);
   transition: all ease 0.25s;
-
-  img {
-    transform: scale(1.1);
-    transition: all ease 1s;
-  }
 }
 
 .card-title {
@@ -95,15 +72,15 @@ defineProps({
   justify-content: center;
 
   width: 100%;
-  height: 100%;
-  // padding: 1rem;
+  max-height: 16rem;
+  padding: 1rem;
 
   overflow: hidden;
   background-color: white;
 }
 
 .image-product-wrapper {
-  max-height: 8rem;
+  height: 100%;
 }
 
 .card-content {
@@ -116,7 +93,8 @@ defineProps({
   -webkit-box-orient: vertical;
   overflow: hidden;
 
-  max-height: 50px;
+  max-height: 3.2rem;
+
   margin: 1rem 0.5rem;
 }
 

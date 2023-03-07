@@ -26,15 +26,19 @@ export const useProductsStore = defineStore('products', {
     async fetchProducts() {
       this.products = [];
       this.loading = true;
-      try {
-        this.products = await api
-          .get('/products')
-          .then((res: any) => res.json());
-      } catch (error) {
-        this.error = error;
-      } finally {
-        this.loading = false;
-      }
+
+      await api
+        .get('/products')
+        .then((res: any) => {
+          this.error = null;
+          this.products = res.data;
+        })
+        .catch((error) => {
+          this.error = error;
+        })
+        .finally(() => {
+          this.loading = false;
+        });
     },
   },
 });
