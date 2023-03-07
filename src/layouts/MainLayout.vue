@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header style="background-color: #fed4f9">
+    <q-header style="background-color: #fe3558cc">
       <HeaderPage />
     </q-header>
     <q-page-container class="contentPage">

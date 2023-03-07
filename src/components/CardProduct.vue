@@ -14,11 +14,13 @@
 
     <div class="card-content">
       <div class="card-description">
-        <p>{{ product?.description }}</p>
+        <span>{{ product?.description }}</span>
       </div>
 
+      <q-separator spaced color="#000000" />
+
       <div class="cart-buttons-group">
-        <label>{{ product?.price }}</label>
+        <h2>{{ priceFormatter(product?.price || 0) }}</h2>
         <button class="button-icons">
           <Plus />
         </button>
@@ -31,6 +33,7 @@
 import { PropType } from 'vue';
 import { CardProductProps } from 'src/composables/_types';
 import { Plus } from 'lucide-vue-next';
+import { priceFormatter } from 'src/libs/utils';
 
 defineProps({
   product: {
@@ -52,8 +55,17 @@ defineProps({
   cursor: pointer;
   position: relative;
 
-  transition: all ease 0.2s;
-  background-color: #fe3558;
+  background-color: $primary;
+}
+
+.card-wrapper:hover {
+  box-shadow: 0.2rem 0.2rem rgb(0, 0, 0);
+  transition: all ease 0.25s;
+
+  img {
+    transform: scale(1.05);
+    transition: all ease 1s;
+  }
 }
 
 .card-title {
@@ -62,9 +74,10 @@ defineProps({
   top: -1rem;
   left: -1rem;
 
-  width: 12rem;
+  max-width: 12rem;
+  z-index: 10;
 
-  background: #fe3558;
+  background: $primary;
   border: 2px solid;
 
   font-size: 1rem;
@@ -75,18 +88,6 @@ defineProps({
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.card-content {
-  padding: 0.5rem;
-}
-
-.card-description {
-  padding: 0.5rem;
-}
-
-.card-wrapper:hover {
-  box-shadow: 3px 3px rgb(0, 0, 0);
-  transition: all ease 0.2s;
-}
 
 .image-content {
   display: flex;
@@ -95,7 +96,7 @@ defineProps({
 
   width: 100%;
   max-height: 20rem;
-  padding: 0.5rem;
+  padding: 1rem;
 
   overflow: hidden;
   background-color: white;
@@ -107,11 +108,20 @@ defineProps({
   display: block;
 }
 
+.card-content {
+  // padding: 1rem;
+}
+
+.card-description {
+  padding: 0.5rem;
+}
+
 .cart-buttons-group {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem;
 
   width: 100%;
 }
@@ -124,8 +134,10 @@ defineProps({
   padding: 0.5rem;
 }
 
-svg:hover {
-  transition: all ease 0.25s;
-  transform: rotate(90deg);
+.button-icons:hover {
+  svg {
+    transition: all ease 0.25s;
+    transform: rotate(90deg);
+  }
 }
 </style>

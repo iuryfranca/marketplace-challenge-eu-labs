@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: #feebfc;
+  background-color: #f1f1f1;
 }
 
 a {
@@ -49,7 +49,7 @@ h4 {
 /* buttons */
 button,
 .btn {
-  background: #fe3558;
+  background: $primary;
 
   border: 2px solid;
   padding: 5px;
