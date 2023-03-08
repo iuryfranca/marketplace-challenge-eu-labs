@@ -1,19 +1,17 @@
 <template>
   <div class="header-wrapper contentPage">
-    <router-link :to="{ name: 'Home' }" class="logo-group">
+    <RouterLink :to="{ name: 'Home' }" class="logo-group">
       <img src="../../assets/logo-americanas.svg" />
       <h1>mktplace</h1>
-    </router-link>
+    </RouterLink>
     <SearchInput />
-    <div class="auth-cart">
-      <ShoppingBag />
-    </div>
+    <CartDrawer />
   </div>
 </template>
 
 <script setup lang="ts" name="HeaderPage">
-import { ShoppingBag } from 'lucide-vue-next';
 import SearchInput from 'components/SearchInput.vue';
+import CartDrawer from 'src/components/CartDrawer.vue';
 </script>
 
 <style lang="scss">
@@ -35,11 +33,5 @@ import SearchInput from 'components/SearchInput.vue';
   img {
     height: 2rem;
   }
-}
-
-.auth-cart {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 </style>

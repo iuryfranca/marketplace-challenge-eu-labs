@@ -7,6 +7,21 @@
   padding: 0 1.25rem; //20px;
 }
 
+.q-position-engine {
+  margin-top: 0.25rem !important;
+  margin-left: -0.4rem !important;
+  will-change: auto;
+  visibility: collapse;
+}
+
+.text-tertiary {
+  color: #00f8c6;
+}
+
+.bg-tertiary {
+  background-color: #00f8c6;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +77,7 @@ h4 {
 button:disabled {
   opacity: 0.5;
   color: $primary;
-  background: $secondary;
+  background: $background-color;
   cursor: not-allowed;
 }
 

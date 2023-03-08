@@ -47,7 +47,6 @@ export const useProductsStore = defineStore('products', {
     },
 
     getSearchFilter(searchTerm: string | null) {
-      console.log(searchTerm);
       this.productsFiltered = this.products.filter((product) =>
         searchTerm === null || searchTerm === ''
           ? (this.productsFiltered = [])

@@ -6,7 +6,7 @@
       <HeaderPresentation />
     </q-header>
     <q-page-container class="contentPage">
-      <router-view />
+      <RouterView />
     </q-page-container>
   </q-layout>
 </template>
