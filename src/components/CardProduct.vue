@@ -14,10 +14,9 @@
 
     <div class="card-content">
       <div class="card-description">
-        <span>{{ product?.description }}</span>
+        {{ product?.description }}
       </div>
-
-      <div class="separator" />
+      <q-separator inset color="grey-1" />
       <ButtonControllerCart :product="product" />
     </div>
   </div>
@@ -43,19 +42,19 @@ const { product } = toRefs(props);
   flex-direction: column;
 
   max-width: 14.5rem;
-  border: 2px solid black;
+  border: 2px solid #121212;
 
   cursor: pointer;
   position: relative;
 
-  box-shadow: 0.125rem 0.125rem 0px 0px #000000;
+  box-shadow: 0.125rem 0.125rem 0px 0px #121212;
   transition: all ease-out 0.2s;
 
   background-color: $primary;
 }
 
 .card-wrapper:hover {
-  box-shadow: 0.25rem 0.25rem rgb(0, 0, 0);
+  box-shadow: 0.25rem 0.25rem #121212;
   transition: all ease-in 0.1s;
 }
 
@@ -69,10 +68,10 @@ const { product } = toRefs(props);
   z-index: 10;
 
   background: $primary;
-  border: 2px solid #000000;
+  border: 2px solid #121212;
 
   font-size: 1rem;
-  box-shadow: 2px 2px 0px 0px #000000;
+  box-shadow: 2px 2px 0px 0px #121212;
 
   overflow: hidden;
   padding: 0.5rem;
@@ -108,21 +107,26 @@ img {
 }
 
 .card-content {
-  border-top: 2px solid #000000;
+  border-top: 2px solid #121212;
 }
 
 .card-description {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow: overlay;
 
-  max-height: 50px;
+  height: 5rem;
+  padding-right: 5px;
   margin: 1rem 0.5rem;
 }
 
-.separator {
-  border: 0.5px solid #000000;
-  margin: 0 0.5rem 0.5rem 0.5rem;
+.card-description::-webkit-scrollbar {
+  width: 3px;
+}
+
+.card-description::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.card-description::-webkit-scrollbar-thumb {
+  background: #121212;
 }
 </style>

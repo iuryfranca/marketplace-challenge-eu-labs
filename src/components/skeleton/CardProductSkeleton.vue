@@ -31,8 +31,8 @@
 
   width: 14rem;
 
-  border: 2px solid black;
-  box-shadow: 1px 1px 0px 0px #000000;
+  border: 2px solid #121212;
+  box-shadow: 1px 1px 0px 0px #121212;
 
   cursor: pointer;
   position: relative;
@@ -41,7 +41,7 @@
 }
 
 .card-wrapper-skeleton:hover {
-  box-shadow: 0.2rem 0.2rem rgb(0, 0, 0);
+  box-shadow: 0.2rem 0.2rem #121212;
   transition: all ease 0.25s;
 }
 
@@ -55,10 +55,10 @@
   z-index: 10;
 
   background: $primary;
-  border: 2px solid #000000;
+  border: 2px solid #121212;
 
   font-size: 1rem;
-  box-shadow: 2px 2px 0px 0px #000000;
+  box-shadow: 2px 2px 0px 0px #121212;
 
   overflow: hidden;
   padding: 0.5rem;
@@ -84,7 +84,7 @@
 }
 
 .card-content {
-  border-top: 2px solid #000000;
+  border-top: 2px solid #121212;
 }
 
 .card-description-skeleton {
@@ -99,7 +99,7 @@
 }
 
 .separator {
-  border: 0.5px solid #000000;
+  border: 0.5px solid #121212;
   margin: 0 0.5rem 0.5rem 0.5rem;
 }
 

@@ -24,7 +24,7 @@ const textsTypewriter = [
   align-items: center;
   justify-content: center;
 
-  color: #000000;
+  color: #121212;
   font-weight: 600;
   background-color: white;
 }

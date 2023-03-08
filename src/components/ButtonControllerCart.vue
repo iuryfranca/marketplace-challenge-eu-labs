@@ -8,27 +8,32 @@
     </span>
 
     <!-- TODO: Componentizar esses buttons -->
-    <button
+    <q-btn
       v-if="amountItemCart === 0"
-      class="btn-add-remove"
+      class="btn-add-remove add"
+      size="sm"
       @click="handleAddToCart"
     >
-      <Plus color="#000000" />
-    </button>
+      <Plus color="#121212" :size="22" />
+    </q-btn>
 
     <div class="group-controller-cart" v-else>
-      <button class="btn-add-remove" @click="handleRemoveToCart">
-        <X color="#000000" />
-      </button>
+      <q-btn
+        class="btn-add-remove remove"
+        size="sm"
+        @click="handleRemoveToCart"
+      >
+        <Minus color="#121212" :size="22" />
+      </q-btn>
       {{ getAmountItemCart(product?.id) }}
-      <button class="btn-add-remove" @click="handleAddToCart">
-        <Plus color="#000000" />
-      </button>
+      <q-btn class="btn-add-remove add" size="sm" @click="handleAddToCart">
+        <Plus color="#121212" :size="22" />
+      </q-btn>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { Plus, X } from 'lucide-vue-next';
+import { Plus, Minus } from 'lucide-vue-next';
 import { PropType, ref, toRefs } from 'vue';
 import { useCartStore } from '../stores/cart';
 import { CardProductProps } from 'src/types/_types';

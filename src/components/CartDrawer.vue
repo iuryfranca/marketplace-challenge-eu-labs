@@ -44,9 +44,9 @@ const drawer = ref(false);
   display: flex;
   flex-direction: column;
 
-  border-left: 2px solid black;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+  border-left: 2px solid #121212;
+  border-top: 2px solid #121212;
+  border-bottom: 2px solid #121212;
 }
 
 .button-cart {
@@ -61,7 +61,7 @@ const drawer = ref(false);
   border-radius: 50%;
 
   background-color: white;
-  color: black;
+  color: #121212;
 
   top: 1.4rem;
   right: 0.5rem;
@@ -82,14 +82,14 @@ const drawer = ref(false);
   height: 3rem;
 
   background-color: $primary;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #121212;
 
   z-index: 1;
 }
 
 .image-header-cart {
   height: 200px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #121212;
   img {
     filter: blur(2px) opacity(0.3);
   }
