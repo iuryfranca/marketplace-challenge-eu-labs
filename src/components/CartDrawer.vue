@@ -13,18 +13,18 @@
     </q-btn>
     <q-drawer
       v-model="drawer"
-      show-if-above
+      :show-if-above="false"
       overlay
       side="right"
       :width="350"
       :breakpoint="400"
       class="cart-drawer shadow-12"
     >
-      <h2 class="cart-title">resumo carrinho</h2>
-      <q-img
+      <h2 class="cart-title shadow-8">resumo carrinho</h2>
+      <!-- <q-img
         class="image-header-cart"
         src="https://i.pinimg.com/564x/d3/8f/a3/d38fa3f76dac9cfc79578b5eb17b7149.jpg"
-      />
+      /> -->
     </q-drawer>
   </div>
 </template>
