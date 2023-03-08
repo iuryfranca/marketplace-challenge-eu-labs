@@ -7,7 +7,7 @@
       {{ priceFormatter(product?.price || 0) }}
     </span>
 
-    //TODO: Componentizar esses buttons
+    <!-- TODO: Componentizar esses buttons -->
     <button
       v-if="amountItemCart === 0"
       class="btn-add-remove"
