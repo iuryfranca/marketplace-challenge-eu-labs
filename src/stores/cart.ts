@@ -6,22 +6,23 @@ export const useCartStore = defineStore('cart', {
     productItems: [] as ProductsCartProps[],
   }),
   getters: {
-    itemsCart: (state) => {
+    itemsCart: (state) =>
       state.productItems.reduce((products, product) => {
         const existingItem = products.find((item) => item.id === product.id);
 
-        console.log('existingItem', existingItem);
-
         if (!existingItem) {
+          products.push({ ...product });
         } else {
           existingItem.amount++;
         }
 
         return products;
-      }, [] as ProductsCartProps[]);
-    },
+      }, [] as ProductsCartProps[]),
 
     amountItemsCart: (state) => state.productItems.length,
+
+    amountPriceCart: (state): number =>
+      state.productItems.reduce((a, b) => a + b.price, 0),
   },
   actions: {
     addItem(productItem: CardProductProps) {
@@ -40,6 +41,10 @@ export const useCartStore = defineStore('cart', {
 
     getAmountItemCart(id: number | undefined) {
       return this.productItems.filter((item) => item.id === id).length;
+    },
+
+    removeAllItems() {
+      this.productItems = [];
     },
   },
 });

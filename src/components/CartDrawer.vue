@@ -1,11 +1,7 @@
 <template>
   <div class="cart-button">
-    <q-btn
-      flat
-      color="#FFFFFF"
-      class="noHover button-cart"
-      @click="drawer = !drawer"
-    >
+    <div :class="drawer ? 'page-mask' : ''" />
+    <q-btn flat color="#FFFFFF" class="noHover" @click="drawer = !drawer">
       <ShoppingBag :size="32" />
       <div v-if="amountItemsCart > 0" class="amount-items-cart">
         {{ amountItemsCart }}
@@ -15,27 +11,51 @@
       v-model="drawer"
       :show-if-above="false"
       overlay
+      elevated
       side="right"
-      :width="350"
+      :width="450"
       :breakpoint="400"
       class="cart-drawer shadow-12"
     >
-      <h2 class="cart-title shadow-8">resumo carrinho</h2>
-      <!-- <q-img
-        class="image-header-cart"
-        src="https://i.pinimg.com/564x/d3/8f/a3/d38fa3f76dac9cfc79578b5eb17b7149.jpg"
-      /> -->
+      <div class="header-cart">
+        <q-img
+          class="image-header-cart absolute-top"
+          src="https://i.pinimg.com/564x/d3/8f/a3/d38fa3f76dac9cfc79578b5eb17b7149.jpg"
+        />
+        <div class="cart-title-content">
+          <h2>resumo carrinho</h2>
+          <span class="row justify-between" style="width: 100%">
+            <h4>Total da compra:</h4>
+            <h3>
+              {{ priceFormatter(amountPriceCart) }}
+            </h3>
+          </span>
+        </div>
+      </div>
+      <q-scroll-area style="width: 100%; height: 100%">
+        <div
+          v-for="itemCart in itemsCart"
+          :key="itemCart.id"
+          class="cards-content"
+        >
+          <CardProductCart :itemCart="itemCart" />
+        </div>
+      </q-scroll-area>
     </q-drawer>
   </div>
 </template>
 
 <script setup lang="ts">
+import CardProductCart from 'components/CardProductCart.vue';
 import { ShoppingBag } from 'lucide-vue-next';
-import { ref } from 'vue';
+import { priceFormatter } from 'src/lib/utils';
 import { storeToRefs } from 'pinia';
 import { useCartStore } from '../stores/cart';
+import { ref } from 'vue';
 
-const { amountItemsCart } = storeToRefs(useCartStore());
+const { amountItemsCart, amountPriceCart, itemsCart } = storeToRefs(
+  useCartStore()
+);
 const drawer = ref(false);
 </script>
 
@@ -46,11 +66,6 @@ const drawer = ref(false);
 
   border-left: 2px solid #121212;
   border-top: 2px solid #121212;
-  border-bottom: 2px solid #121212;
-}
-
-.button-cart {
-  position: relative;
 }
 
 .amount-items-cart {
@@ -74,24 +89,47 @@ const drawer = ref(false);
   justify-content: center;
 }
 
-.cart-title {
+.header-cart {
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
 
-  height: 3rem;
-
-  background-color: $primary;
+  height: 20rem;
   border-bottom: 2px solid #121212;
-
   z-index: 1;
 }
 
 .image-header-cart {
-  height: 200px;
-  border-bottom: 2px solid #121212;
+  height: 227px;
   img {
-    filter: blur(2px) opacity(0.3);
+    filter: blur(1px);
   }
+}
+
+.cart-title-content {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0.5rem;
+
+  align-items: flex-end;
+  justify-content: space-between;
+  background-color: #ff2c57ba;
+}
+
+.cards-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.65rem;
+
+  padding: 0.7rem;
 }
 </style>

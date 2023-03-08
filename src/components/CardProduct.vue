@@ -44,7 +44,6 @@ const { product } = toRefs(props);
   max-width: 14.5rem;
   border: 2px solid #121212;
 
-  cursor: pointer;
   position: relative;
 
   box-shadow: 0.125rem 0.125rem 0px 0px #121212;
