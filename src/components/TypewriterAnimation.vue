@@ -14,8 +14,8 @@ export default {
       typeValue: '',
       typeStatus: false,
       // displayTextArray: ['cart', 'carrinho', 'Eu Labs 🚌', 'desafio'],
-      typingSpeed: 100,
-      erasingSpeed: 100,
+      typingSpeed: 80,
+      erasingSpeed: 50,
       newTextDelay: 3000,
       displayTextArrayIndex: 0,
       charIndex: 0,
@@ -77,11 +77,17 @@ export default {
   align-items: center;
 }
 
+.typed-text {
+  color: black;
+  font-size: larger;
+  font-weight: 600;
+}
+
 // Cursor blinking CSS Starts...
 .blinking-cursor {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
-  color: white;
+  color: black;
 
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
@@ -96,7 +102,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: white;
+    color: black;
   }
 }
 @-moz-keyframes blink {
@@ -105,7 +111,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: white;
+    color: black;
   }
 }
 @-webkit-keyframes blink {
@@ -114,7 +120,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: white;
+    color: black;
   }
 }
 @-ms-keyframes blink {
@@ -123,7 +129,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: white;
+    color: black;
   }
 }
 @-o-keyframes blink {
@@ -132,7 +138,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: white;
+    color: black;
   }
 }
 // Cursor blinking CSS Ends...

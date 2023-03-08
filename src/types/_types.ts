@@ -12,3 +12,7 @@ export interface CardProductProps {
   image: string;
   rating: Rating;
 }
+
+export interface ProductsCartProps extends CardProductProps {
+  amount: number;
+}

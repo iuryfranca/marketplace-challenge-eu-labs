@@ -21,7 +21,7 @@
 
       <div class="flex justify-between items-center q-pa-sm">
         <h2>{{ priceFormatter(product?.price || 0) }}</h2>
-        <button class="btn-add flex justify-center">
+        <button class="btn-add flex justify-center" @click="handleAdToCart">
           <Plus color="#000000" />
         </button>
       </div>
@@ -30,16 +30,27 @@
 </template>
 
 <script setup lang="ts" name="CardProduct">
-import { PropType } from 'vue';
+import { PropType, toRefs } from 'vue';
 import { CardProductProps } from 'src/types/_types';
 import { Plus } from 'lucide-vue-next';
 import { priceFormatter } from 'src/lib/utils';
+import { storeToRefs } from 'pinia';
+import { useCartStore } from '../stores/cart';
 
-defineProps({
+const { addItem, removeItem } = useCartStore();
+
+const props = defineProps({
   product: {
     type: Object as PropType<CardProductProps>,
   },
 });
+
+const { product } = toRefs(props);
+
+const handleAdToCart = () => {
+  if (product?.value) addItem(product?.value);
+  else alert('Não foi possível adicionar esse produto ao carrinho');
+};
 </script>
 
 <style lang="scss">

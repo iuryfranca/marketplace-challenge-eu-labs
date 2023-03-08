@@ -1,12 +1,24 @@
 <template>
-  <div class="banner-bottom-header">desafio front end EuLabs</div>
+  <div class="banner-bottom-header">
+    <TypewriterAnimation :display-text-array="textsTypewriter" />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TypewriterAnimation from '../TypewriterAnimation.vue';
+
+const textsTypewriter = [
+  'desafio front-end',
+  'mktplace | challenger',
+  'Eu Labs 🚌',
+  'starting 🚀 # code 💻 # coffee ☕',
+  'typescript | javascript | vue3 | quasar | pinia | scss',
+];
+</script>
 
 <style lang="scss">
 .banner-bottom-header {
-  height: 2rem;
+  height: 2.5rem;
 
   display: flex;
   align-items: center;
