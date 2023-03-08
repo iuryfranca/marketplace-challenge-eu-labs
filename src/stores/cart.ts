@@ -10,6 +10,8 @@ export const useCartStore = defineStore('cart', {
       state.productItems.reduce((products, product) => {
         const existingItem = products.find((item) => item.id === product.id);
 
+        console.log('existingItem', existingItem);
+
         if (!existingItem) {
         } else {
           existingItem.amount++;
@@ -34,6 +36,10 @@ export const useCartStore = defineStore('cart', {
       if (objectToRemove)
         this.productItems.splice(this.productItems.indexOf(objectToRemove), 1);
       else alert('Produto não encontrado');
+    },
+
+    getAmountItemCart(id: number | undefined) {
+      return this.productItems.filter((item) => item.id === id).length;
     },
   },
 });

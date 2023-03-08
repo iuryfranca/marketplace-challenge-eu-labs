@@ -18,39 +18,23 @@
       </div>
 
       <div class="separator" />
-
-      <div class="flex justify-between items-center q-pa-sm">
-        <h2>{{ priceFormatter(product?.price || 0) }}</h2>
-        <button class="btn-add flex justify-center" @click="handleAdToCart">
-          <Plus color="#000000" />
-        </button>
-      </div>
+      <ButtonControllerCart :product="product" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts" name="CardProduct">
+import ButtonControllerCart from 'components/ButtonControllerCart.vue';
 import { PropType, toRefs } from 'vue';
 import { CardProductProps } from 'src/types/_types';
-import { Plus } from 'lucide-vue-next';
-import { priceFormatter } from 'src/lib/utils';
-import { storeToRefs } from 'pinia';
-import { useCartStore } from '../stores/cart';
 
-const { addItem, removeItem } = useCartStore();
-
+//TODO: Esses props passando para outros props está muito feio, ir atrás de melhorar/otimizar
 const props = defineProps({
   product: {
     type: Object as PropType<CardProductProps>,
   },
 });
-
 const { product } = toRefs(props);
-
-const handleAdToCart = () => {
-  if (product?.value) addItem(product?.value);
-  else alert('Não foi possível adicionar esse produto ao carrinho');
-};
 </script>
 
 <style lang="scss">
@@ -58,7 +42,7 @@ const handleAdToCart = () => {
   display: flex;
   flex-direction: column;
 
-  max-width: 14rem;
+  max-width: 14.5rem;
   border: 2px solid black;
 
   cursor: pointer;
@@ -72,7 +56,7 @@ const handleAdToCart = () => {
 
 .card-wrapper:hover {
   box-shadow: 0.25rem 0.25rem rgb(0, 0, 0);
-  transition: all ease-in 0.2s;
+  transition: all ease-in 0.1s;
 }
 
 .card-title {
@@ -140,12 +124,5 @@ img {
 .separator {
   border: 0.5px solid #000000;
   margin: 0 0.5rem 0.5rem 0.5rem;
-}
-
-.btn-add:hover {
-  svg {
-    transition: all ease 0.25s;
-    transform: rotate(90deg);
-  }
 }
 </style>

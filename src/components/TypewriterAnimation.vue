@@ -15,7 +15,7 @@ export default {
       typeStatus: false,
       // displayTextArray: ['cart', 'carrinho', 'Eu Labs 🚌', 'desafio'],
       typingSpeed: 80,
-      erasingSpeed: 50,
+      erasingSpeed: 30,
       newTextDelay: 3000,
       displayTextArrayIndex: 0,
       charIndex: 0,

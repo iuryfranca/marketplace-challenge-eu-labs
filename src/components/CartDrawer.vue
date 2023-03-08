@@ -48,6 +48,7 @@ const drawer = ref(false);
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
+
 .button-cart {
   position: relative;
 }

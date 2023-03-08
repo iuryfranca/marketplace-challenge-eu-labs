@@ -37,7 +37,7 @@ fetchProducts();
 
   margin-top: 3rem;
   padding-top: 1rem;
-  gap: 4rem;
+  gap: 3.5rem;
 
   @media (max-width: $breakpoint-md-min) {
     justify-content: center;

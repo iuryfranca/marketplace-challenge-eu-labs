@@ -62,23 +62,19 @@ h4 {
 }
 
 /* buttons */
-.btn-add {
+.btn-add-remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background: $primary;
+  cursor: pointer;
+  font-size: 1rem;
+
+  padding: 2px;
 
   border: 2px solid #000000;
-  padding: 0.5rem;
-
-  cursor: pointer;
-
-  font-size: 1rem;
   box-shadow: 2px 2px 0px 0px #000000;
-}
-
-button:disabled {
-  opacity: 0.5;
-  color: $primary;
-  background: $background-color;
-  cursor: not-allowed;
 }
 
 /* error text */
