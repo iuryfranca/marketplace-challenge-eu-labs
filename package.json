@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "yarn quasar dev",
     "build": "yarn quasar build",
+    "deploy": "vercel",
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0"
