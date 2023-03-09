@@ -13,26 +13,22 @@
       overlay
       elevated
       side="right"
-      :width="450"
+      :width="400"
       :breakpoint="400"
       class="cart-drawer shadow-12"
     >
-      <div class="header-cart">
-        <q-img
-          class="image-header-cart absolute-top"
-          src="https://i.pinimg.com/564x/d3/8f/a3/d38fa3f76dac9cfc79578b5eb17b7149.jpg"
-        />
-        <div class="cart-title-content">
-          <h2>resumo carrinho</h2>
-          <span class="row justify-between" style="width: 100%">
-            <h4>Total da compra:</h4>
-            <h3>
-              {{ priceFormatter(amountPriceCart) }}
-            </h3>
-          </span>
-        </div>
+      <div class="cart-title-content">
+        <h1>resumo carrinho</h1>
+        <span class="row justify-between amount-total" style="width: 100%">
+          <h4>Total da compra:</h4>
+          <h3>
+            {{ priceFormatter(amountPriceCart) }}
+          </h3>
+        </span>
       </div>
-      <q-scroll-area style="width: 100%; height: 100%">
+      <q-scroll-area
+        style="width: 100%; height: 100%; background-color: #f80032"
+      >
         <div
           v-for="itemCart in itemsCart"
           :key="itemCart.id"
@@ -64,8 +60,8 @@ const drawer = ref(false);
   display: flex;
   flex-direction: column;
 
-  border-left: 2px solid #121212;
-  border-top: 2px solid #121212;
+  border-left: 2px solid $black;
+  border-top: 2px solid $black;
 }
 
 .amount-items-cart {
@@ -75,8 +71,8 @@ const drawer = ref(false);
   width: 1.2rem;
   border-radius: 50%;
 
+  color: $black;
   background-color: white;
-  color: #121212;
 
   top: 1.4rem;
   right: 0.5rem;
@@ -89,37 +85,27 @@ const drawer = ref(false);
   justify-content: center;
 }
 
-.header-cart {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-
-  height: 20rem;
-  border-bottom: 2px solid #121212;
-  z-index: 1;
-}
-
-.image-header-cart {
-  height: 227px;
-  img {
-    filter: blur(1px);
-  }
-}
-
 .cart-title-content {
   display: flex;
   flex-direction: column;
   z-index: 1;
 
-  width: 100%;
-  height: 100%;
-
   padding: 0.5rem;
+  gap: 1rem;
+
+  border-bottom: 2px solid $dark;
 
   align-items: flex-end;
   justify-content: space-between;
-  background-color: #ff2c57ba;
+  background-color: #ff0032;
+}
+
+.amount-total {
+  width: 100%;
+  background-color: #e7e7e7;
+  padding: 10px;
+  color: $dark;
+  border: 2px solid $dark;
 }
 
 .cards-content {

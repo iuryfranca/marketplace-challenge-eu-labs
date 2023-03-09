@@ -10,8 +10,9 @@
     <!-- TODO: Componentizar esses buttons -->
     <q-btn
       v-if="amountItemCart === 0"
-      class="btn-add-remove add"
+      class="btn-add-remove"
       size="sm"
+      color="primary"
       @click="handleAddToCart"
     >
       <Plus color="#121212" :size="22" />
@@ -19,14 +20,20 @@
 
     <div class="group-controller-cart" v-else>
       <q-btn
-        class="btn-add-remove remove"
+        class="btn-add-remove"
+        style="background-color: #e7e7e7"
         size="sm"
         @click="handleRemoveToCart"
       >
         <Minus color="#121212" :size="22" />
       </q-btn>
       {{ getAmountItemCart(product?.id) }}
-      <q-btn class="btn-add-remove add" size="sm" @click="handleAddToCart">
+      <q-btn
+        class="btn-add-remove"
+        style="background-color: #e7e7e7"
+        size="sm"
+        @click="handleAddToCart"
+      >
         <Plus color="#121212" :size="22" />
       </q-btn>
     </div>
@@ -88,7 +95,9 @@ const handleRemoveToCart = () => {
 
   border-radius: 5px;
 
-  background-color: $secondary;
+  background-color: #f80032;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .btn-add:hover {
@@ -104,12 +113,12 @@ const handleRemoveToCart = () => {
 }
 
 .text-large {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1.4rem;
 }
 
 .text-medium {
-  font-size: medium;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 800;
 }
 </style>

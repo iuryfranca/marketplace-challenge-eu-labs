@@ -40,7 +40,7 @@ const handleChange = (e: any) => {
   font-size: 16px;
   font-weight: 600;
 
-  color: #121212;
+  color: $black;
 }
 
 .form-content {

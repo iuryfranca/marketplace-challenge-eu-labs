@@ -78,7 +78,7 @@ export default {
 }
 
 .typed-text {
-  color: #121212;
+  color: $black;
   font-size: larger;
   font-weight: 600;
 }
@@ -87,7 +87,7 @@ export default {
 .blinking-cursor {
   font-size: 1.5rem;
   font-weight: 400;
-  color: #121212;
+  color: $black;
 
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
@@ -102,7 +102,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: #121212;
+    color: $black;
   }
 }
 @-moz-keyframes blink {
@@ -111,7 +111,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: #121212;
+    color: $black;
   }
 }
 @-webkit-keyframes blink {
@@ -120,7 +120,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: #121212;
+    color: $black;
   }
 }
 @-ms-keyframes blink {
@@ -129,7 +129,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: #121212;
+    color: $black;
   }
 }
 @-o-keyframes blink {
@@ -138,7 +138,7 @@ export default {
     color: transparent;
   }
   50% {
-    color: #121212;
+    color: $black;
   }
 }
 // Cursor blinking CSS Ends...

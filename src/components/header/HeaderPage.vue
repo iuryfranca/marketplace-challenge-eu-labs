@@ -30,6 +30,8 @@ import CartDrawer from 'src/components/CartDrawer.vue';
   align-items: center;
   max-height: 5rem;
 
+  color: #ffffff;
+
   img {
     height: 2rem;
   }

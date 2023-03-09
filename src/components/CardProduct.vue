@@ -16,7 +16,7 @@
       <div class="card-description">
         {{ product?.description }}
       </div>
-      <q-separator inset color="grey-1" />
+      <div class="separator q-mx-lg" />
       <ButtonControllerCart :product="product" />
     </div>
   </div>
@@ -42,18 +42,19 @@ const { product } = toRefs(props);
   flex-direction: column;
 
   max-width: 14.5rem;
-  border: 2px solid #121212;
+  border: 2px solid $black;
 
   position: relative;
 
-  box-shadow: 0.125rem 0.125rem 0px 0px #121212;
+  box-shadow: 0.125rem 0.125rem 0px 0px $black;
   transition: all ease-out 0.2s;
 
-  background-color: $primary;
+  background-color: $tertiary;
+  color: $black;
 }
 
 .card-wrapper:hover {
-  box-shadow: 0.25rem 0.25rem #121212;
+  box-shadow: 0.25rem 0.25rem $black;
   transition: all ease-in 0.1s;
 }
 
@@ -63,17 +64,19 @@ const { product } = toRefs(props);
   top: -1rem;
   left: -1rem;
 
-  max-width: 12rem;
   z-index: 10;
+  padding: 0.5rem;
+  max-width: 12rem;
 
-  background: $primary;
+  color: #ffffff;
+  background: #ff0033;
+  box-shadow: 2px 2px #121212;
   border: 2px solid #121212;
 
+  font-weight: 700;
   font-size: 1rem;
-  box-shadow: 2px 2px 0px 0px #121212;
 
   overflow: hidden;
-  padding: 0.5rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -106,11 +109,14 @@ img {
 }
 
 .card-content {
-  border-top: 2px solid #121212;
+  border-top: 2px solid $black;
+  color: $black;
 }
 
 .card-description {
   overflow: overlay;
+
+  font-weight: 600;
 
   height: 5rem;
   padding-right: 5px;
@@ -126,6 +132,11 @@ img {
 }
 
 .card-description::-webkit-scrollbar-thumb {
-  background: #121212;
+  background: $black;
+}
+
+.separator {
+  border: 1px solid $dark;
+  border-radius: 2px;
 }
 </style>

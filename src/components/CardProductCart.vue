@@ -16,7 +16,7 @@
           <div class="card-product-cart-title">
             {{ itemCart?.title }}
           </div>
-          <div class="card-description">
+          <div v-if="false" class="card-description">
             {{ itemCart?.description }}
           </div>
         </div>
@@ -48,8 +48,8 @@ const { itemCart } = toRefs(props);
   width: 1.2rem;
   border-radius: 50%;
 
-  background-color: white;
-  color: #121212;
+  background-color: $dark;
+  color: #ffffff;
 
   top: 0.3rem;
   right: 0.3rem;
@@ -70,16 +70,18 @@ const { itemCart } = toRefs(props);
   justify-content: center;
 
   height: 100%;
-  border: 2px solid #121212;
+  width: 100%;
 
-  box-shadow: 0.125rem 0.125rem 0px 0px #121212;
+  border: 2px solid #121212;
+  box-shadow: 0.125rem 0.125rem #121212;
   transition: all ease-out 0.2s;
 
-  background-color: $primary;
+  background-color: $tertiary;
+  color: $dark;
 }
 
 .style-card-cart:hover {
-  box-shadow: 0.25rem 0.25rem #121212;
+  box-shadow: 0.25rem 0.25rem $black;
   transition: all ease-in 0.1s;
 }
 
@@ -87,7 +89,7 @@ const { itemCart } = toRefs(props);
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   padding: 0.5rem 0.5rem 0.5rem 0;
 
@@ -105,12 +107,13 @@ const { itemCart } = toRefs(props);
 }
 
 .image-wrapper {
-  height: 8rem;
-  widows: 12rem;
+  height: 5rem;
 }
 
 .card-product-cart-title {
   padding-right: 5px;
-  margin: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  font-weight: 700;
 }
 </style>

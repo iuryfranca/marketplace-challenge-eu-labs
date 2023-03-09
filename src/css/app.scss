@@ -14,14 +14,6 @@
   visibility: collapse;
 }
 
-.text-tertiary {
-  color: #00f8c6;
-}
-
-.bg-tertiary {
-  background-color: #00f8c6;
-}
-
 .page-mask {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -35,7 +27,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif;
-  color: #ffffff;
 }
 
 body {
@@ -81,16 +72,8 @@ h4 {
 
   padding: 4px;
 
-  border: 2px solid #121212;
-  box-shadow: 2px 2px 0px 0px #121212;
-}
-
-.add {
-  background: $btn-add;
-}
-
-.remove {
-  background: $btn-remove;
+  border: 2px solid $black;
+  box-shadow: 2px 2px 0px 0px $black;
 }
 
 /* error text */
