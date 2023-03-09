@@ -101,7 +101,7 @@ const { itemCart } = toRefs(props);
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 8rem;
   overflow: hidden;
   background-color: white;
 }
@@ -111,6 +111,11 @@ const { itemCart } = toRefs(props);
 }
 
 .card-product-cart-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
   padding-right: 5px;
   margin-left: 0.5rem;
   margin-right: 0.5rem;

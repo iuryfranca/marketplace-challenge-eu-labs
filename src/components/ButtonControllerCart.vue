@@ -9,21 +9,24 @@
 
     <!-- TODO: Componentizar esses buttons -->
     <q-btn
-      v-if="amountItemCart === 0"
+      v-if="getAmountItemCart(product?.id) === 0"
       class="btn-add-remove"
       size="sm"
       color="primary"
-      @click="handleAddToCart"
+      @click="handleActionToCart('add')"
     >
       <Plus color="#121212" :size="22" />
     </q-btn>
 
-    <div class="group-controller-cart" v-else>
+    <div
+      class="group-controller-cart"
+      v-if="getAmountItemCart(product?.id) !== 0"
+    >
       <q-btn
         class="btn-add-remove"
         style="background-color: #e7e7e7"
         size="sm"
-        @click="handleRemoveToCart"
+        @click="handleActionToCart('remove')"
       >
         <Minus color="#121212" :size="22" />
       </q-btn>
@@ -32,7 +35,7 @@
         class="btn-add-remove"
         style="background-color: #e7e7e7"
         size="sm"
-        @click="handleAddToCart"
+        @click="handleActionToCart('add')"
       >
         <Plus color="#121212" :size="22" />
       </q-btn>
@@ -54,20 +57,12 @@ const props = defineProps({
 const { product } = toRefs(props);
 
 const { addItem, removeItem, getAmountItemCart } = useCartStore();
-const amountItemCart = ref(0);
+const amountItemCart = ref(getAmountItemCart(product?.value?.id));
 
-const handleAddToCart = () => {
-  if (product?.value) addItem(product?.value);
-  else alert('Não foi possível adicionar esse produto ao carrinho');
-
-  amountItemCart.value = getAmountItemCart(product?.value?.id);
-};
-
-const handleRemoveToCart = () => {
-  if (product?.value) removeItem(product?.value.id);
-  else alert('Não foi possível remover esse produto ao carrinho');
-
-  amountItemCart.value = getAmountItemCart(product?.value?.id);
+const handleActionToCart = (action: 'add' | 'remove') => {
+  if (!product?.value) return;
+  if (action === 'add') addItem(product?.value);
+  if (action === 'remove') removeItem(product?.value.id);
 };
 </script>
 

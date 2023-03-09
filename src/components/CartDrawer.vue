@@ -114,7 +114,7 @@ const drawer = ref(false);
   align-items: center;
   justify-content: center;
 
-  gap: 0.65rem;
+  gap: 0.3rem;
 
   padding: 0.7rem;
 }
