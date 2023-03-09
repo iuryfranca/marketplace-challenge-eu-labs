@@ -8,6 +8,9 @@
     <q-page-container class="contentPage">
       <RouterView />
     </q-page-container>
+    <!-- <q-footer class="shadow-up-8">
+      <FooterPage />
+    </q-footer> -->
   </q-layout>
 </template>
 
@@ -15,6 +18,7 @@
 import HeaderBanner from 'components/header/HeaderBanner.vue';
 import HeaderPage from 'components/header/HeaderPage.vue';
 import HeaderPresentation from 'components/header/HeaderPresentation.vue';
+import FooterPage from 'components/FooterPage.vue';
 </script>
 
 <style lang="scss">

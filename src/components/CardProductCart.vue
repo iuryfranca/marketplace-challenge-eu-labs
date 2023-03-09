@@ -1,6 +1,6 @@
 <template>
   <div class="style-card-cart">
-    <div class="amount-item-cart">
+    <div v-if="false" class="amount-item-cart">
       {{ itemCart?.amount }}
     </div>
     <div class="image-content-cart">
@@ -65,7 +65,7 @@ const { itemCart } = toRefs(props);
 .style-card-cart {
   position: relative;
   display: grid;
-  grid-template-columns: 9rem 1fr;
+  grid-template-columns: 5.5rem 1fr;
   align-items: center;
   justify-content: center;
 

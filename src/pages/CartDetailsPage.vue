@@ -1,11 +1,13 @@
 <template>
   <q-page>
     <div class="cart-page-wrapper">
-      <q-scroll-area class="scroll-content shadow-12">
+      <div>
         <h1 class="title-list-items-cart">items carrinho</h1>
-        <ListItemsCart v-if="amountItemsCart > 0" />
-        <EmptyCartWarning v-if="amountItemsCart === 0" />
-      </q-scroll-area>
+        <q-scroll-area class="scroll-content shadow-12">
+          <ListItemsCart v-if="amountItemsCart > 0" />
+          <EmptyCartWarning v-if="amountItemsCart === 0" />
+        </q-scroll-area>
+      </div>
 
       <div class="card-amount-content shadow-12">
         <h1>resumo carrinho</h1>
@@ -35,6 +37,7 @@ import EmptyCartWarning from 'src/components/EmptyCartWarning.vue';
 import { storeToRefs } from 'pinia';
 import { useCartStore } from '../stores/cart';
 import { priceFormatter } from 'src/lib/utils';
+import { QPageContainer } from 'quasar';
 
 const { amountPriceCart, amountItemsCart } = storeToRefs(useCartStore());
 </script>
@@ -49,6 +52,14 @@ const { amountPriceCart, amountItemsCart } = storeToRefs(useCartStore());
   height: 100%;
 
   padding-top: 3rem;
+
+  @media (max-width: $breakpoint-md-min) {
+    grid-template-columns: none;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 1rem;
+    gap: 1rem;
+  }
 }
 
 .title-list-items-cart {
@@ -58,6 +69,13 @@ const { amountPriceCart, amountItemsCart } = storeToRefs(useCartStore());
 
   padding: 1rem;
   color: #ffffff;
+  background-color: #f80032;
+  border: 2px solid #1d1d1d;
+  border-bottom: none;
+
+  @media (max-width: $breakpoint-md-min) {
+    display: none;
+  }
 }
 
 .card-amount-content {
@@ -76,12 +94,17 @@ const { amountPriceCart, amountItemsCart } = storeToRefs(useCartStore());
   border: 2px solid #1d1d1d;
   background-color: #ff0032;
 }
+
 .scroll-content {
   width: 100%;
-  min-height: 700px;
+  height: 100%;
 
   padding-right: 0.5rem;
   background-color: #f80032;
   border: 2px solid #1d1d1d;
+
+  @media (max-width: $breakpoint-md-min) {
+    height: 28rem;
+  }
 }
 </style>

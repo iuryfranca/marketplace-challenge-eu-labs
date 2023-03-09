@@ -46,7 +46,7 @@ const handleChange = (e: any) => {
   will-change: top;
   flex: 5 1 0%;
   max-width: 746px;
-  padding: 0px 48px;
+  padding: 0px 30px;
 }
 
 .input-content {

@@ -27,13 +27,24 @@ import CartDrawer from 'src/components/CartDrawer.vue';
 .logo-group {
   display: flex;
   gap: 0.5rem;
+
   align-items: center;
   max-height: 5rem;
 
   color: #ffffff;
 
-  img {
+  > img {
     height: 2rem;
+
+    @media (max-width: $breakpoint-md-min) {
+      height: 1rem;
+    }
+  }
+
+  > h1 {
+    @media (max-width: $breakpoint-md-min) {
+      font-size: 1rem;
+    }
   }
 }
 </style>

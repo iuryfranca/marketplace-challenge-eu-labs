@@ -19,7 +19,7 @@
       overlay
       elevated
       side="right"
-      :width="410"
+      :width="350"
       :breakpoint="400"
       class="cart-drawer shadow-12"
     >
@@ -40,7 +40,7 @@
       </q-scroll-area>
       <div class="footer-page">
         <RouterLink :to="{ name: 'CartDetails' }">
-          <button class="button-next-page shadow-15">
+          <button class="button-next-page shadow-5">
             <span>ver detalhes do carrinho</span>
           </button>
         </RouterLink>
@@ -127,10 +127,11 @@ const drawer = ref(false);
   align-items: center;
   justify-content: flex-end;
 
-  height: 120px;
+  height: 100px;
   width: 100%;
 
   padding: 10px;
+  padding-bottom: 1.5rem;
   padding-right: 0;
 
   background-color: $primary;

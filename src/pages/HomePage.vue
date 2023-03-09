@@ -1,9 +1,9 @@
 <template>
   <q-page>
-    <ListProductsVue />
+    <ListProducts />
   </q-page>
 </template>
 
 <script setup lang="ts">
-import ListProductsVue from 'src/components/ListProducts.vue';
+import ListProducts from 'src/components/ListProducts.vue';
 </script>
