@@ -59,7 +59,6 @@ const props = defineProps({
 const { product } = toRefs(props);
 
 const { addItem, removeItem, getAmountItemCart } = useCartStore();
-const amountItemCart = ref(getAmountItemCart(product?.value?.id));
 
 const handleActionToCart = (action: 'add' | 'remove') => {
   if (!product?.value) return;
@@ -95,6 +94,8 @@ const handleActionToCart = (action: 'add' | 'remove') => {
   background-color: #f80032;
   color: #ffffff;
   font-weight: 700;
+
+  transition: all ease-in 0.2s;
 }
 
 .btn-add:hover {

@@ -11,9 +11,14 @@ const routes: RouteRecordRaw[] = [
         component: () => import('src/pages/HomePage.vue'),
       },
       {
-        path: 'detalhes-carrinho',
+        path: '/detalhes-carrinho',
         name: 'CartDetails',
-        component: () => import('src/pages/HomePage.vue'),
+        component: () => import('src/pages/CartDetailsPage.vue'),
+      },
+      {
+        path: '/pagamento',
+        name: 'PaymentPage',
+        component: () => import('src/pages/PaymentPage.vue'),
       },
     ],
   },

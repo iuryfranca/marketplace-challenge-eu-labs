@@ -24,7 +24,7 @@ const { products, productsFiltered, loading, error } = storeToRefs(
 );
 const { fetchProducts } = useProductsStore();
 
-fetchProducts();
+if (products.value.length === 0) fetchProducts();
 </script>
 
 <style lang="scss">
@@ -35,7 +35,7 @@ fetchProducts();
 
   justify-content: space-between;
 
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding-top: 1rem;
   gap: 3.5rem;
 

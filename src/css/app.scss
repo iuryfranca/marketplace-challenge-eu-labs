@@ -17,10 +17,23 @@
 .page-mask {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
-  top: 168px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+.button-cart-header {
+  top: 168px;
+}
+
+.disable-component-style {
+  cursor: not-allowed !important;
+  filter: brightness(0.8);
+
+  > input {
+    pointer-events: none;
+  }
 }
 
 * {
@@ -74,6 +87,8 @@ h4 {
 
   border: 2px solid $black;
   box-shadow: 2px 2px 0px 0px $black;
+
+  transition: all ease 0.2s;
 }
 
 /* error text */

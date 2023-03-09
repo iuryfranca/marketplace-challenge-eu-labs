@@ -1,10 +1,19 @@
 <template>
   <div class="form-wrapper">
-    <div class="form-content">
-      <input required class="input-content" type="text" @input="handleChange" />
-      <div class="button-search">
-        <Search :size="21" color="#f80032" />
-      </div>
+    <div v-if="onFocus" class="page-mask" />
+    <div
+      class="form-content"
+      :class="currentUrl !== 'Home' ? 'disable-component-style' : ''"
+    >
+      <input
+        required
+        class="input-content"
+        @focus="handleFocusIn"
+        @blur="handleFocusOut"
+        type="text"
+        @input="handleChange"
+      />
+      <div class="button-search"><Search :size="21" color="#f80032" /></div>
     </div>
   </div>
 </template>
@@ -12,9 +21,19 @@
 <script setup lang="ts">
 import { Search } from 'lucide-vue-next';
 import { useProductsStore } from 'src/stores/products';
+import { computed, ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const currentUrl = computed(() => {
+  return router.currentRoute.value.name;
+});
+
+const onFocus = ref(false);
+const handleFocusIn = () => (onFocus.value = true);
+const handleFocusOut = () => (onFocus.value = false);
 
 const { getSearchFilter } = useProductsStore();
-
 const handleChange = (e: any) => {
   getSearchFilter(e.target.value);
 };
@@ -49,7 +68,6 @@ const handleChange = (e: any) => {
   background: rgb(255, 255, 255);
   border-radius: 8px;
   height: 40px;
-  box-shadow: rgb(0 0 0 / 12%) 0px 10px 15px;
   z-index: 0;
   position: relative;
 }

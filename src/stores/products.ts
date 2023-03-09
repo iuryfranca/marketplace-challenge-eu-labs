@@ -42,7 +42,7 @@ export const useProductsStore = defineStore('products', {
           // Esse setTimeOut só está aqui para que vpvE possam ver o Skeleton que fiz :)
           setTimeout(() => {
             this.loading = false;
-          }, 2500);
+          }, 1000);
         });
     },
 

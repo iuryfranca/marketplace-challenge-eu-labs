@@ -1,7 +1,13 @@
 <template>
   <div class="cart-button">
-    <div :class="drawer ? 'page-mask' : ''" />
-    <q-btn flat color="#FFFFFF" class="noHover" @click="drawer = !drawer">
+    <div v-if="drawer" class="page-mask button-cart-header" />
+    <q-btn
+      :disable="currentUrl !== 'Home'"
+      flat
+      color="#FFFFFF"
+      class="noHover"
+      @click="drawer = !drawer"
+    >
       <ShoppingBag :size="32" />
       <div v-if="amountItemsCart > 0" class="amount-items-cart">
         {{ amountItemsCart }}
@@ -29,13 +35,8 @@
       <q-scroll-area
         style="width: 100%; height: 100%; background-color: #f80032"
       >
-        <div
-          v-for="itemCart in itemsCart"
-          :key="itemCart.id"
-          class="cards-content"
-        >
-          <CardProductCart :itemCart="itemCart" />
-        </div>
+        <ListItemsCart v-if="amountItemsCart > 0" />
+        <EmptyCartWarning v-if="amountItemsCart === 0" />
       </q-scroll-area>
       <div class="footer-page">
         <RouterLink :to="{ name: 'CartDetails' }">
@@ -49,16 +50,21 @@
 </template>
 
 <script setup lang="ts">
-import CardProductCart from 'components/CardProductCart.vue';
+import ListItemsCart from 'components/ListItemsCart.vue';
+import EmptyCartWarning from './EmptyCartWarning.vue';
 import { ShoppingBag } from 'lucide-vue-next';
 import { priceFormatter } from 'src/lib/utils';
 import { storeToRefs } from 'pinia';
 import { useCartStore } from '../stores/cart';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-const { amountItemsCart, amountPriceCart, itemsCart } = storeToRefs(
-  useCartStore()
-);
+const router = useRouter();
+const currentUrl = computed(() => {
+  return router.currentRoute.value.name;
+});
+
+const { amountItemsCart, amountPriceCart } = storeToRefs(useCartStore());
 const drawer = ref(false);
 </script>
 
@@ -114,17 +120,6 @@ const drawer = ref(false);
   padding: 10px;
   color: $dark;
   border: 2px solid $dark;
-}
-
-.cards-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  gap: 0.3rem;
-
-  padding: 0.7rem;
 }
 
 .footer-page {
