@@ -13,14 +13,14 @@
       overlay
       elevated
       side="right"
-      :width="400"
+      :width="410"
       :breakpoint="400"
       class="cart-drawer shadow-12"
     >
       <div class="cart-title-content">
         <h1>resumo carrinho</h1>
         <span class="row justify-between amount-total" style="width: 100%">
-          <h4>Total da compra:</h4>
+          <h4>total da compra:</h4>
           <h3>
             {{ priceFormatter(amountPriceCart) }}
           </h3>
@@ -37,6 +37,13 @@
           <CardProductCart :itemCart="itemCart" />
         </div>
       </q-scroll-area>
+      <div class="footer-page">
+        <RouterLink :to="{ name: 'CartDetails' }">
+          <button class="button-next-page shadow-15">
+            <span>ver detalhes do carrinho</span>
+          </button>
+        </RouterLink>
+      </div>
     </q-drawer>
   </div>
 </template>
@@ -91,7 +98,8 @@ const drawer = ref(false);
   z-index: 1;
 
   padding: 0.5rem;
-  gap: 1rem;
+  padding-bottom: 1rem;
+  gap: 0.5rem;
 
   border-bottom: 2px solid $dark;
 
@@ -117,5 +125,37 @@ const drawer = ref(false);
   gap: 0.3rem;
 
   padding: 0.7rem;
+}
+
+.footer-page {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  height: 120px;
+  width: 100%;
+
+  padding: 10px;
+  padding-right: 0;
+
+  background-color: $primary;
+  color: $dark;
+}
+
+.button-next-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: large;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 8px 0 0 8px;
+  padding: 1rem;
+
+  cursor: pointer;
+
+  background-color: $tertiary;
 }
 </style>

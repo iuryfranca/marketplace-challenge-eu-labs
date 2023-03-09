@@ -2,7 +2,9 @@
   <div class="group-price-buttons">
     <span
       class="animation-text-price"
-      :class="amountItemCart === 0 ? 'text-large' : 'text-medium'"
+      :class="
+        getAmountItemCart(product?.id) === 0 ? 'text-large' : 'text-medium'
+      "
     >
       {{ priceFormatter(product?.price || 0) }}
     </span>
