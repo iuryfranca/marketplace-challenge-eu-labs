@@ -8,38 +8,18 @@
           <EmptyCartWarning v-if="amountItemsCart === 0" />
         </q-scroll-area>
       </div>
-
-      <div class="card-amount-content shadow-12">
-        <h1>resumo carrinho</h1>
-        <span class="row justify-between amount-total" style="width: 100%">
-          <h4>total da compra:</h4>
-          <h3>
-            {{ priceFormatter(amountPriceCart) }}
-          </h3>
-        </span>
-        <div class="footer-page" style="margin-right: -8px">
-          <RouterLink :to="{ name: 'PaymentPage' }">
-            <button
-              :disabled="amountItemsCart === 0"
-              class="button-next-page shadow-15"
-            >
-              <span>realizar o pagamento</span>
-            </button>
-          </RouterLink>
-        </div>
-      </div>
+      <CartAmountTotal />
     </div>
   </q-page>
 </template>
 <script setup lang="ts">
 import ListItemsCart from 'src/components/ListItemsCart.vue';
 import EmptyCartWarning from 'src/components/EmptyCartWarning.vue';
+import CartAmountTotal from 'src/components/CartAmountTotal.vue';
 import { storeToRefs } from 'pinia';
 import { useCartStore } from '../stores/cart';
-import { priceFormatter } from 'src/lib/utils';
-import { QPageContainer } from 'quasar';
 
-const { amountPriceCart, amountItemsCart } = storeToRefs(useCartStore());
+const { amountItemsCart } = storeToRefs(useCartStore());
 </script>
 
 <style lang="scss">
@@ -78,26 +58,9 @@ const { amountPriceCart, amountItemsCart } = storeToRefs(useCartStore());
   }
 }
 
-.card-amount-content {
-  display: flex;
-  flex-direction: column;
-
-  align-items: flex-end;
-  justify-content: space-between;
-
-  z-index: 1;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  height: min-content;
-
-  color: #ffffff;
-  border: 2px solid #1d1d1d;
-  background-color: #ff0032;
-}
-
 .scroll-content {
   width: 100%;
-  height: 100%;
+  height: 50vh;
 
   padding-right: 0.5rem;
   background-color: #f80032;
