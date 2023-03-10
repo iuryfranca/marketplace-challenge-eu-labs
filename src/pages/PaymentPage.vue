@@ -109,6 +109,8 @@ const handleFinallyPayment = () => {
 
   padding-top: 3rem;
 
+  margin-bottom: 3rem;
+
   @media (max-width: $breakpoint-md-min) {
     grid-template-columns: none;
     display: flex;

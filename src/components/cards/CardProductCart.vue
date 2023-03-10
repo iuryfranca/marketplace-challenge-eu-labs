@@ -14,9 +14,7 @@
       class="image-content-cart"
       :style="
         (currentUrl === 'SuccessPage' && Screen.xs) ||
-        (currentUrl === 'CartDetails' && Screen.xs) ||
-        (currentUrl === 'SuccessPage' && Screen.sm) ||
-        (currentUrl === 'CartDetails' && Screen.sm)
+        (currentUrl === 'SuccessPage' && Screen.sm)
           ? 'min-width: 100%'
           : ''
       "
@@ -137,6 +135,7 @@ const { itemCart } = toRefs(props);
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-width: 100%;
   height: 100%;
   overflow: hidden;
   background-color: white;
