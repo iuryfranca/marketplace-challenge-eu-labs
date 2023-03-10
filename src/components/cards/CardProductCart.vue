@@ -1,7 +1,11 @@
 <template>
   <div
     class="style-card-cart"
-    :style="currentUrl === 'Home' ? 'grid-template-columns: 5.5rem 1fr' : ''"
+    :style="
+      currentUrl === 'Home' && !Screen.xs && !Screen.sm
+        ? 'grid-template-columns: 5.5rem 1fr'
+        : ''
+    "
   >
     <div v-if="currentUrl === 'SuccessPage'" class="amount-item-cart">
       {{ itemCart?.amount }}
@@ -42,6 +46,7 @@ import { ProductsCartProps } from 'src/types/_types';
 import { PropType, toRefs } from 'vue';
 import { useRouter } from 'vue-router';
 import { computed } from 'vue';
+import { Screen } from 'quasar';
 
 const router = useRouter();
 const currentUrl = computed(() => {
