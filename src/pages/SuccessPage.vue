@@ -138,6 +138,14 @@ const print = async () => {
     'people total'
     'items items';
   gap: 1rem;
+
+  @media (max-width: $breakpoint-md-min) {
+    grid-auto-columns: 1fr 1fr 1fr !important;
+    grid-template-areas:
+      'people people '
+      'total total'
+      'items items' !important;
+  }
 }
 
 .success-group-products {

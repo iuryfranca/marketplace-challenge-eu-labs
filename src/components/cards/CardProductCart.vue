@@ -10,7 +10,17 @@
     <div v-if="currentUrl === 'SuccessPage'" class="amount-item-cart">
       {{ itemCart?.amount }}
     </div>
-    <div class="image-content-cart">
+    <div
+      class="image-content-cart"
+      :style="
+        (currentUrl === 'SuccessPage' && Screen.xs) ||
+        (currentUrl === 'CartDetails' && Screen.xs) ||
+        (currentUrl === 'SuccessPage' && Screen.sm) ||
+        (currentUrl === 'CartDetails' && Screen.sm)
+          ? 'min-width: 100%'
+          : ''
+      "
+    >
       <img
         :src="itemCart?.image"
         class="image-wrapper"
