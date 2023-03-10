@@ -9,14 +9,14 @@
           <h4 style="align-self: end">dados cliente</h4>
           <PeopleDataForm />
           <h4 style="align-self: end">forma de pagamento</h4>
-          <div class="forms__payment-method">
+          <div class="forms-payment-method">
             <q-select
               v-model="payment.paymentMethod"
               :options="paymentMethodOptions"
               label="forma de pagamento"
               bg-color="white"
               outlined
-              class="forms__payment-method-select"
+              class="forms-payment-method-select"
               required
             />
             <q-select
@@ -27,7 +27,7 @@
               bg-color="white"
               outlined
               :value="installmentsOptions[0]"
-              class="forms__payment-method-select"
+              class="forms-payment-method-select"
               required
             />
           </div>
@@ -161,7 +161,7 @@ const handleFinallyPayment = () => {
   color: #ffffff;
 }
 
-.forms__payment-method {
+.forms-payment-method {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -169,8 +169,12 @@ const handleFinallyPayment = () => {
   gap: 1rem;
 }
 
-.forms__payment-method-select {
+.forms-payment-method-select {
   font-weight: 600;
   min-width: 15rem;
+
+  @media (max-width: $breakpoint-md-min) {
+    min-width: 8rem;
+  }
 }
 </style>

@@ -48,7 +48,7 @@ const { paymentPage } = toRefs(props);
   justify-content: space-between;
 
   z-index: 1;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 1rem;
   height: min-content;
 

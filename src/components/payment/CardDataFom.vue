@@ -6,7 +6,7 @@
       :mask="'#### #### #### #### ####'"
       bg-color="white"
       outlined
-      class="credit-card__number"
+      class="credit-card-number"
       required
       :rules="[(val) => !!val]"
     />
@@ -91,7 +91,7 @@ inicializeValuesPayment();
   }
 }
 
-.credit-card__number {
+.credit-card-number {
   grid-area: number;
 }
 
