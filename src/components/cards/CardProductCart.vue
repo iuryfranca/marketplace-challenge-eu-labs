@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="style-card-cart"
-    :style="currentUrl === 'Home' ? 'grid-template-columns: 5.5rem 1fr' : ''"
-  >
+  <div class="style-card-cart">
     <div v-if="false" class="amount-item-cart">
       {{ itemCart?.amount }}
     </div>
@@ -88,6 +85,11 @@ const { itemCart } = toRefs(props);
 
   background-color: $tertiary;
   color: $dark;
+
+  @media (max-width: $breakpoint-md-min) {
+    grid-template-rows: 8rem 1fr;
+    grid-template-columns: none;
+  }
 }
 
 .style-card-cart:hover {
@@ -114,6 +116,10 @@ const { itemCart } = toRefs(props);
   height: 100%;
   overflow: hidden;
   background-color: white;
+
+  @media (max-width: $breakpoint-md-min) {
+    min-width: 20rem;
+  }
 }
 
 .image-wrapper {
