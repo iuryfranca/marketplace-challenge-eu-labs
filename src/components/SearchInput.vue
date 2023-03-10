@@ -45,8 +45,8 @@ const handleChange = (e: any) => {
   transition: all 0.1s ease-in-out 0s;
   will-change: top;
   flex: 5 1 0%;
-  max-width: 746px;
-  padding: 0px 30px;
+  max-width: 46.625rem;
+  padding: 0 1.875rem;
 }
 
 .input-content {
@@ -54,9 +54,9 @@ const handleChange = (e: any) => {
   width: 100%;
   background: none;
   border: none;
-  padding: 11px 0px 11px 16px;
+  padding: 0.68rem 0px 0.68rem 1rem;
 
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
 
   color: $black;
@@ -66,14 +66,14 @@ const handleChange = (e: any) => {
   display: flex;
   width: 100%;
   background: rgb(255, 255, 255);
-  border-radius: 8px;
-  height: 40px;
+  border-radius: 0.5rem;
+  height: 2.5rem;
   z-index: 0;
   position: relative;
 }
 
 .button-search {
-  width: 40px;
+  width: 2.5rem;
   border: none;
   cursor: pointer;
   background: none;

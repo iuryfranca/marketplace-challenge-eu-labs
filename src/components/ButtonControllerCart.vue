@@ -6,10 +6,12 @@
         getAmountItemCart(product?.id) === 0 ? 'text-large' : 'text-medium'
       "
     >
-      {{ priceFormatter(product?.price || 0) }}
+      <span v-if="currentUrl !== 'Home'" style="font-size: x-small">
+        {{ product!.price }}x{{ product!.amount }}
+      </span>
+      {{ priceFormatter(product!.price * product!.amount || 0) }}
     </span>
 
-    <!-- TODO: Componentizar esses buttons -->
     <q-btn
       v-if="getAmountItemCart(product?.id) === 0"
       class="btn-add-remove"
@@ -46,14 +48,20 @@
 </template>
 <script setup lang="ts">
 import { Plus, Minus } from 'lucide-vue-next';
-import { PropType, ref, toRefs } from 'vue';
+import { PropType, computed, toRefs } from 'vue';
 import { useCartStore } from 'src/stores/cart';
-import { CardProductProps } from 'src/types/_types';
+import { ProductsCartProps } from 'src/types/_types';
 import { priceFormatter } from 'src/lib/utils';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const currentUrl = computed(() => {
+  return router.currentRoute.value.name;
+});
 
 const props = defineProps({
   product: {
-    type: Object as PropType<CardProductProps>,
+    type: Object as PropType<ProductsCartProps>,
   },
 });
 const { product } = toRefs(props);
@@ -74,7 +82,7 @@ const handleActionToCart = (action: 'add' | 'remove') => {
   justify-content: space-between;
   align-items: center;
 
-  height: 38px;
+  height: 3rem;
 
   margin: 0.5rem 0.5rem;
 }

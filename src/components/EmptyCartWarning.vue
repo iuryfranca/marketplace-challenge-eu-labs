@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-const snippets = 'Snippets';
+//
 </script>
 
 <style lang="scss">
@@ -17,9 +17,9 @@ const snippets = 'Snippets';
 
   padding: 1rem;
   margin: 0.5rem;
-  height: 300px;
+  height: 18.75rem;
 
-  border-radius: 10px;
+  border-radius: 0.625rem;
   border: 2px solid $dark;
   color: $dark;
   background-color: $tertiary;

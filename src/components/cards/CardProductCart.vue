@@ -1,5 +1,8 @@
 <template>
-  <div class="style-card-cart">
+  <div
+    class="style-card-cart"
+    :style="currentUrl === 'Home' ? 'grid-template-columns: 5.5rem 1fr' : ''"
+  >
     <div v-if="false" class="amount-item-cart">
       {{ itemCart?.amount }}
     </div>
@@ -10,13 +13,13 @@
         :alt="`Image ${itemCart?.title}`"
       />
     </div>
-    <div>
+    <div style="width: auto">
       <div class="card-product-cart">
         <div card-product-cart-content>
           <div class="card-product-cart-title">
             {{ itemCart?.title }}
           </div>
-          <div v-if="false" class="card-description">
+          <div v-if="currentUrl === 'CartDetails'" class="card-description">
             {{ itemCart?.description }}
           </div>
         </div>
@@ -31,6 +34,13 @@
 import ButtonControllerCart from 'components/ButtonControllerCart.vue';
 import { ProductsCartProps } from 'src/types/_types';
 import { PropType, toRefs } from 'vue';
+import { useRouter } from 'vue-router';
+import { computed } from 'vue';
+
+const router = useRouter();
+const currentUrl = computed(() => {
+  return router.currentRoute.value.name;
+});
 
 const props = defineProps({
   itemCart: {
@@ -65,7 +75,7 @@ const { itemCart } = toRefs(props);
 .style-card-cart {
   position: relative;
   display: grid;
-  grid-template-columns: 5.5rem 1fr;
+  grid-template-columns: 8rem 1fr;
   align-items: center;
   justify-content: center;
 
@@ -101,7 +111,7 @@ const { itemCart } = toRefs(props);
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 8rem;
+  height: 100%;
   overflow: hidden;
   background-color: white;
 }

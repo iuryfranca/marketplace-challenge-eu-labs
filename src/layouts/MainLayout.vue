@@ -24,6 +24,6 @@ import FooterPage from 'components/FooterPage.vue';
 <style lang="scss">
 .q-header {
   background-color: #ff0032;
-  box-shadow: rgb(0 0 0 / 12%) 0px 10px 15px;
+  box-shadow: rgb(0 0 0 / 12%) 0px 0.625rem 1rem;
 }
 </style>

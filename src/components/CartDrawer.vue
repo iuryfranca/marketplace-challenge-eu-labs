@@ -1,6 +1,10 @@
 <template>
   <div class="cart-button">
-    <div v-if="drawer" class="page-mask button-cart-header" />
+    <div
+      v-if="drawer"
+      class="page-mask button-cart-header"
+      @click="drawer = !drawer"
+    />
     <q-btn
       :disable="currentUrl !== 'Home'"
       flat
@@ -127,7 +131,7 @@ const drawer = ref(false);
   align-items: center;
   justify-content: flex-end;
 
-  height: 100px;
+  height: 6.25rem;
   width: 100%;
 
   padding: 10px;

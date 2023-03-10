@@ -26,7 +26,7 @@ const { amountItemsCart } = storeToRefs(useCartStore());
 .cart-page-wrapper {
   display: grid;
   gap: 2rem;
-  grid-template-columns: 1fr 350px;
+  grid-template-columns: 1fr 22rem;
 
   width: 100%;
   height: 100%;

@@ -25,12 +25,12 @@
 <script setup lang="ts" name="CardProduct">
 import ButtonControllerCart from 'components/ButtonControllerCart.vue';
 import { PropType, toRefs } from 'vue';
-import { CardProductProps } from 'src/types/_types';
+import { ProductsCartProps } from 'src/types/_types';
 
 //TODO: Esses props passando para outros props está muito feio, ir atrás de melhorar/otimizar
 const props = defineProps({
   product: {
-    type: Object as PropType<CardProductProps>,
+    type: Object as PropType<ProductsCartProps>,
   },
 });
 const { product } = toRefs(props);
