@@ -4,9 +4,9 @@
       <div class="shadow-12">
         <h1 class="title-list-items-cart">dados para pagamento</h1>
         <div class="card-payment-content">
-          <h4 style="align-self: end">dados cartão</h4>
+          <h4 style="align-self: end">cartão</h4>
           <CardDataFom />
-          <h4 style="align-self: end">dados cliente</h4>
+          <h4 style="align-self: end">cliente</h4>
           <PeopleDataForm />
           <h4 style="align-self: end">forma de pagamento</h4>
           <div class="forms-payment-method">

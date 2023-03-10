@@ -4,7 +4,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import CardProductCart from 'components/CardProductCart.vue';
+import CardProductCart from 'src/components/cards/CardProductCart.vue';
 import { storeToRefs } from 'pinia';
 import { useCartStore } from 'src/stores/cart';
 

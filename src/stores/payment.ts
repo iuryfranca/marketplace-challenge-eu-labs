@@ -6,6 +6,7 @@ export const usePaymentStore = defineStore('payment', {
     payment: {} as PaymentDataProps,
   }),
   getters: {
+    //Verificação de todos os campos na pag de pagamentos foram preenchidos
     isObjectEmpty: (state) =>
       state.payment.card.birth.length > 0 &&
       state.payment.card.cpfCnpj.length > 0 &&
@@ -20,6 +21,7 @@ export const usePaymentStore = defineStore('payment', {
       state.payment.paymentMethod.length > 0,
   },
   actions: {
+    //É necessário inicializar o objeto pata que ele porra receber os valos nos inputs
     inicializeValuesPayment() {
       this.payment = {
         card: {

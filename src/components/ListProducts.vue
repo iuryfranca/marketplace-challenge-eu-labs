@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import CardProductSkeleton from 'src/components/skeleton/CardProductSkeleton.vue';
-import CardProduct from 'src/components/CardProduct.vue';
+import CardProduct from 'src/components/cards/CardProduct.vue';
 import { storeToRefs } from 'pinia';
 import { useProductsStore } from 'src/stores/products';
 
