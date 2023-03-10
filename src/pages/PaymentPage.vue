@@ -62,12 +62,15 @@ import { computed, onMounted } from 'vue';
 import { useCartStore } from 'src/stores/cart';
 import { storeToRefs } from 'pinia';
 import { usePaymentStore } from 'src/stores/payment';
+import { useRouter } from 'vue-router';
 
 const { inicializeValuesPayment } = usePaymentStore();
 inicializeValuesPayment();
 
+const { getDataPageSuccess } = usePaymentStore();
 const { payment, isObjectEmpty } = storeToRefs(usePaymentStore());
 const { amountPriceCart } = storeToRefs(useCartStore());
+const router = useRouter();
 
 const paymentMethodOptions = ['Dinheiro', 'Débito', 'Crédito'];
 
@@ -90,6 +93,8 @@ const installments = (amount = 0) => {
 
 const handleFinallyPayment = () => {
   console.log('Ir para pag de sucesso', payment.value);
+  getDataPageSuccess();
+  router.push({ name: 'SuccessPage' });
 };
 </script>
 

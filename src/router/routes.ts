@@ -20,6 +20,11 @@ const routes: RouteRecordRaw[] = [
         name: 'PaymentPage',
         component: () => import('src/pages/PaymentPage.vue'),
       },
+      {
+        path: '/sucesso',
+        name: 'SuccessPage',
+        component: () => import('src/pages/SuccessPage.vue'),
+      },
     ],
   },
 

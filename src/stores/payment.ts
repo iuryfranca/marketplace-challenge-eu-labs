@@ -1,9 +1,10 @@
 import { defineStore } from 'pinia';
-import { PaymentDataProps } from '../types/_types';
+import { PaymentDataProps, PaymentSuccessProps } from 'src/types/_types';
 
 export const usePaymentStore = defineStore('payment', {
   state: () => ({
     payment: {} as PaymentDataProps,
+    paymentSuccess: {} as PaymentSuccessProps,
   }),
   getters: {
     //Verificação de todos os campos na pag de pagamentos foram preenchidos
@@ -40,6 +41,17 @@ export const usePaymentStore = defineStore('payment', {
         },
         paymentMethod: '',
         disable: true,
+      };
+    },
+
+    getDataPageSuccess() {
+      this.paymentSuccess = {
+        peopleName: this.payment.card.peopleName,
+        birth: this.payment.card.birth,
+        cpfCnpj: this.payment.card.cpfCnpj,
+        phone: this.payment.card.phone.number,
+        installments: this.payment.card.installments,
+        paymentMethod: this.payment.paymentMethod,
       };
     },
   },

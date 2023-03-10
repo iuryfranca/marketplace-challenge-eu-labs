@@ -44,3 +44,12 @@ export type PaymentDataProps = {
   paymentMethod: string;
   disable: boolean;
 };
+
+export type PaymentSuccessProps = {
+  peopleName: string;
+  birth: string;
+  cpfCnpj: string;
+  phone: string;
+  installments: string;
+  paymentMethod: string;
+};

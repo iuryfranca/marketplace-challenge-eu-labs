@@ -1,0 +1,53 @@
+.success-page-wrapper {
+  position: relative;
+  padding: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+  border: 2px solid #9e9e9e;
+}
+.title-success-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+  margin-bottom: 3rem;
+}
+.success-list-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'people total' 'items items';
+  gap: 1rem;
+}
+.success-group-products {
+  grid-area: items;
+  align-items: flex-end;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid #9e9e9e;
+}
+.success-group-people {
+  grid-area: people;
+  align-items: end;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid #9e9e9e;
+}
+.success-group-total {
+  grid-area: total;
+  align-items: end;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid #9e9e9e;
+}
+.success-page-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}

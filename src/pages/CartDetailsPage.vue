@@ -67,7 +67,8 @@ const { amountItemsCart } = storeToRefs(useCartStore());
   border: 2px solid #1d1d1d;
 
   @media (max-width: $breakpoint-md-min) {
-    height: 28rem;
+    height: 35rem;
+    margin-bottom: 2rem;
   }
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
-  <div class="style-card-cart">
-    <div v-if="false" class="amount-item-cart">
+  <div
+    class="style-card-cart"
+    :style="currentUrl === 'Home' ? 'grid-template-columns: 5.5rem 1fr' : ''"
+  >
+    <div v-if="currentUrl === 'SuccessPage'" class="amount-item-cart">
       {{ itemCart?.amount }}
     </div>
     <div class="image-content-cart">
@@ -16,13 +19,19 @@
           <div class="card-product-cart-title">
             {{ itemCart?.title }}
           </div>
-          <div v-if="currentUrl === 'CartDetails'" class="card-description">
+          <div
+            v-if="currentUrl === 'CartDetails' || currentUrl === 'SuccessPage'"
+            class="card-description"
+          >
             {{ itemCart?.description }}
           </div>
         </div>
       </div>
       <q-separator inset color="grey-1" />
-      <ButtonControllerCart :product="itemCart" />
+      <ButtonControllerCart
+        v-if="currentUrl !== 'SuccessPage'"
+        :product="itemCart"
+      />
     </div>
   </div>
 </template>

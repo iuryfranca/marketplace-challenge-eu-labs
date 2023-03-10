@@ -1,8 +1,8 @@
 {
   "name": "marketplace-challenge-eu-labs",
   "version": "0.0.1",
-  "description": "Projeto para testar minhas habilidades front-end com quasar and vue3",
-  "productName": "Quasar App",
+  "description": "desafio front-end Eu Labs, objetivo: criar um marketplace com todas as regras disponibilizas",
+  "productName": "mktplace challenge [Eu Labs]",
   "author": "Iury Franca <iurygfranca@gmail.com>",
   "private": true,
   "scripts": {
