@@ -13,7 +13,7 @@
         type="text"
         @input="handleChange"
       />
-      <div class="button-search"><Search :size="21" color="#f80032" /></div>
+      <div class="button-search"><Search :size="21" color="#ff0032" /></div>
     </div>
   </div>
 </template>

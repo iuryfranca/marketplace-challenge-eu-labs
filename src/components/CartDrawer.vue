@@ -33,7 +33,7 @@
         </span>
       </div>
       <q-scroll-area
-        style="width: 100%; height: 100%; background-color: #f80032"
+        style="width: 100%; height: 100%; background-color: #ff0032"
       >
         <ListItemsCart v-if="amountItemsCart > 0" />
         <EmptyCartWarning v-if="amountItemsCart === 0" />
@@ -55,7 +55,7 @@ import EmptyCartWarning from './EmptyCartWarning.vue';
 import { ShoppingBag } from 'lucide-vue-next';
 import { priceFormatter } from 'src/lib/utils';
 import { storeToRefs } from 'pinia';
-import { useCartStore } from '../stores/cart';
+import { useCartStore } from 'src/stores/cart';
 import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
 

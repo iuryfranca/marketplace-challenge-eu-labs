@@ -20,8 +20,8 @@
               required
             />
             <q-select
-              v-if="payment.paymentMethod === 'Crédito'"
               v-model="payment.card.installments"
+              v-if="payment.paymentMethod === 'Crédito'"
               :options="installmentsOptions"
               label="Parcelamento"
               bg-color="white"
@@ -33,8 +33,20 @@
           </div>
         </div>
       </div>
+      <div>
+        <CartAmountTotal paymentPage />
 
-      <CartAmountTotal payment />
+        <div class="card-button-finally">
+          <button
+            class="button-next-page-cart-amount shadow-15"
+            style="margin-right: -1rem"
+            :disabled="!isObjectEmpty"
+            @click="handleFinallyPayment"
+          >
+            finalizar compra
+          </button>
+        </div>
+      </div>
     </div>
   </q-page>
 </template>
@@ -51,7 +63,10 @@ import { useCartStore } from 'src/stores/cart';
 import { storeToRefs } from 'pinia';
 import { usePaymentStore } from 'src/stores/payment';
 
-const { payment } = storeToRefs(usePaymentStore());
+const { inicializeValuesPayment } = usePaymentStore();
+inicializeValuesPayment();
+
+const { payment, isObjectEmpty } = storeToRefs(usePaymentStore());
 const { amountPriceCart } = storeToRefs(useCartStore());
 
 const paymentMethodOptions = ['Dinheiro', 'Débito', 'Crédito'];
@@ -65,27 +80,16 @@ const installmentsOptions = computed(() => {
 });
 
 const installments = (amount = 0) => {
-  if (amount <= 50)
-    return [
-      {
-        installment: 1,
-        amount,
-        label: `1x de ${priceFormatter(amount)}`,
-      },
-    ];
+  if (amount <= 50) return [`1x de ${priceFormatter(amount)}`];
   else
     return [
-      {
-        installment: 1,
-        amount,
-        label: `1x de ${priceFormatter(amount)}`,
-      },
-      {
-        installment: 2,
-        amount,
-        label: `2x de ${priceFormatter(amount / 2)}`,
-      },
+      `1x de ${priceFormatter(amount)}`,
+      `2x de ${priceFormatter(amount / 2)}`,
     ];
+};
+
+const handleFinallyPayment = () => {
+  console.log('Ir para pag de sucesso', payment.value);
 };
 </script>
 
@@ -116,13 +120,31 @@ const installments = (amount = 0) => {
 
   padding: 1rem;
   color: #ffffff;
-  background-color: #f80032;
+  background-color: $primary;
   border: 2px solid #1d1d1d;
   border-bottom: none;
 
   @media (max-width: $breakpoint-md-min) {
     display: none;
   }
+}
+
+.card-button-finally {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  z-index: 1;
+  gap: 0.5rem;
+  padding: 1rem;
+  height: min-content;
+
+  color: #ffffff;
+  border: 2px solid #1d1d1d;
+  border-top: none;
+  background-color: #ff0032;
 }
 
 .card-payment-content {
@@ -134,7 +156,7 @@ const installments = (amount = 0) => {
 
   padding: 1rem;
 
-  background-color: #f80032;
+  background-color: $primary;
   border: 2px solid #1d1d1d;
   color: #ffffff;
 }

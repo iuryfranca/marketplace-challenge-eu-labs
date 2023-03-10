@@ -17,7 +17,7 @@ import ListItemsCart from 'src/components/ListItemsCart.vue';
 import EmptyCartWarning from 'src/components/EmptyCartWarning.vue';
 import CartAmountTotal from 'src/components/CartAmountTotal.vue';
 import { storeToRefs } from 'pinia';
-import { useCartStore } from '../stores/cart';
+import { useCartStore } from 'src/stores/cart';
 
 const { amountItemsCart } = storeToRefs(useCartStore());
 </script>
@@ -49,7 +49,7 @@ const { amountItemsCart } = storeToRefs(useCartStore());
 
   padding: 1rem;
   color: #ffffff;
-  background-color: #f80032;
+  background-color: $primary;
   border: 2px solid #1d1d1d;
   border-bottom: none;
 
@@ -63,7 +63,7 @@ const { amountItemsCart } = storeToRefs(useCartStore());
   height: 50vh;
 
   padding-right: 0.5rem;
-  background-color: #f80032;
+  background-color: $primary;
   border: 2px solid #1d1d1d;
 
   @media (max-width: $breakpoint-md-min) {

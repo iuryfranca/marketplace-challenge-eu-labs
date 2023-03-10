@@ -6,7 +6,7 @@
 <script setup lang="ts">
 import CardProductCart from 'components/CardProductCart.vue';
 import { storeToRefs } from 'pinia';
-import { useCartStore } from '../stores/cart';
+import { useCartStore } from 'src/stores/cart';
 
 const { itemsCart } = storeToRefs(useCartStore());
 </script>

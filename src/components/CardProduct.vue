@@ -69,7 +69,7 @@ const { product } = toRefs(props);
   max-width: 12rem;
 
   color: #ffffff;
-  background: #ff0033;
+  background: #ff0032;
   box-shadow: 2px 2px #121212;
   border: 2px solid #121212;
 

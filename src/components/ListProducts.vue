@@ -17,7 +17,7 @@
 import CardProductSkeleton from 'src/components/skeleton/CardProductSkeleton.vue';
 import CardProduct from 'src/components/CardProduct.vue';
 import { storeToRefs } from 'pinia';
-import { useProductsStore } from '../stores/products';
+import { useProductsStore } from 'src/stores/products';
 
 const { products, productsFiltered, loading, error } = storeToRefs(
   useProductsStore()

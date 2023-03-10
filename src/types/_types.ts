@@ -10,13 +10,12 @@ type installment = {
 };
 
 type cardPayment = {
-  id: number;
   flag: string;
   number: string;
   expiry: string;
   cvv: string;
   owner: string;
-  installments: installment;
+  installments: string;
 
   peopleName: string;
   birth: string;

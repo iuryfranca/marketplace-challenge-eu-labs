@@ -47,7 +47,7 @@
 <script setup lang="ts">
 import { Plus, Minus } from 'lucide-vue-next';
 import { PropType, ref, toRefs } from 'vue';
-import { useCartStore } from '../stores/cart';
+import { useCartStore } from 'src/stores/cart';
 import { CardProductProps } from 'src/types/_types';
 import { priceFormatter } from 'src/lib/utils';
 
@@ -91,7 +91,7 @@ const handleActionToCart = (action: 'add' | 'remove') => {
 
   border-radius: 5px;
 
-  background-color: #f80032;
+  background-color: $primary;
   color: #ffffff;
   font-weight: 700;
 
