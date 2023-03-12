@@ -54,5 +54,10 @@ export const usePaymentStore = defineStore('payment', {
         paymentMethod: this.payment.paymentMethod,
       };
     },
+
+    removeAllDataPayment() {
+      (this.payment = {} as PaymentDataProps),
+        (this.paymentSuccess = {} as PaymentSuccessProps);
+    },
   },
 });

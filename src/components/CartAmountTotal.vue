@@ -1,6 +1,6 @@
 <template>
   <div class="card-amount-content shadow-12">
-    <h1 style="padding: 1rem">resumo carrinho</h1>
+    <h1 class="title-card-amount-content">resumo carrinho</h1>
     <span class="row justify-between amount-total" style="width: 100%">
       <h4>total da compra:</h4>
       <h3>
@@ -57,6 +57,15 @@ const { paymentPage } = toRefs(props);
   background-color: #ff0032;
 }
 
+.title-card-amount-content {
+  padding: 1rem;
+
+  @media (max-width: $breakpoint-md-min) {
+    font-size: 1.2rem;
+    padding: 0;
+  }
+}
+
 .button-next-page-cart-amount {
   display: flex;
   align-items: center;
@@ -64,6 +73,8 @@ const { paymentPage } = toRefs(props);
 
   font-size: large;
   font-weight: 700;
+
+  min-width: 11rem;
 
   border: none;
   border-radius: 8px 0 0 8px;

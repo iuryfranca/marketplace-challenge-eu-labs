@@ -45,6 +45,14 @@
           >
             finalizar compra
           </button>
+
+          <button
+            class="button-next-page-cart-amount shadow-15"
+            style="margin-right: -1rem"
+            @click="handleCancelPayment"
+          >
+            cancelar compra
+          </button>
         </div>
       </div>
     </div>
@@ -67,7 +75,8 @@ import { useRouter } from 'vue-router';
 const { inicializeValuesPayment } = usePaymentStore();
 inicializeValuesPayment();
 
-const { getDataPageSuccess } = usePaymentStore();
+const { getDataPageSuccess, removeAllDataPayment } = usePaymentStore();
+const { removeAllItems } = useCartStore();
 const { payment, isObjectEmpty } = storeToRefs(usePaymentStore());
 const { amountPriceCart } = storeToRefs(useCartStore());
 const router = useRouter();
@@ -92,9 +101,14 @@ const installments = (amount = 0) => {
 };
 
 const handleFinallyPayment = () => {
-  console.log('Ir para pag de sucesso', payment.value);
   getDataPageSuccess();
   router.push({ name: 'SuccessPage' });
+};
+
+const handleCancelPayment = () => {
+  removeAllItems();
+  removeAllDataPayment();
+  router.push({ name: 'Home' });
 };
 </script>
 
@@ -114,25 +128,9 @@ const handleFinallyPayment = () => {
   @media (max-width: $breakpoint-md-min) {
     grid-template-columns: none;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding-top: 1rem;
     gap: 1rem;
-  }
-}
-
-.title-list-items-cart {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  padding: 1rem;
-  color: #ffffff;
-  background-color: $primary;
-  border: 2px solid #1d1d1d;
-  border-bottom: none;
-
-  @media (max-width: $breakpoint-md-min) {
-    display: none;
   }
 }
 

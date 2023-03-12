@@ -32,13 +32,14 @@ const { amountItemsCart } = storeToRefs(useCartStore());
   height: 100%;
 
   padding-top: 3rem;
+  padding-bottom: 2rem;
 
   @media (max-width: $breakpoint-md-min) {
     grid-template-columns: none;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding-top: 1rem;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 }
 
@@ -54,7 +55,7 @@ const { amountItemsCart } = storeToRefs(useCartStore());
   border-bottom: none;
 
   @media (max-width: $breakpoint-md-min) {
-    display: none;
+    font-size: 1.2rem;
   }
 }
 

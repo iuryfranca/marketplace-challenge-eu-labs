@@ -90,7 +90,6 @@ const print = async () => {
   );
   if (WindowPrt && printContent) {
     var location = window.location.href;
-    console.log(location);
     if (location.indexOf('?app=true') > -1) {
       document.write(
         '<link rel="stylesheet" type="text/css" href="success-page.css" />'
