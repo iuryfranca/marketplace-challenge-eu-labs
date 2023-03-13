@@ -60,7 +60,7 @@
       round
       size="1.5rem"
       @click="print"
-      label="print"
+      aria-label="print"
     >
       <Printer />
     </q-btn>

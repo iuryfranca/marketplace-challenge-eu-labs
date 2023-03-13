@@ -13,7 +13,7 @@
         text-color="blue"
         unelevated
         to="/"
-        label="go-home"
+        aria-label="go-home"
         no-caps
       />
     </div>

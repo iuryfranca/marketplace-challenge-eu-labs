@@ -11,7 +11,7 @@
       color="#FFFFFF"
       class="noHover"
       @click="drawer = !drawer"
-      label="drawer-controller"
+      aria-label="drawer-controller"
     >
       <ShoppingBag :size="32" />
       <div v-if="amountItemsCart > 0" class="amount-items-cart">
@@ -46,7 +46,7 @@
       </q-scroll-area>
       <div class="footer-page">
         <RouterLink :to="{ name: 'CartDetails' }">
-          <button class="button-next-page shadow-5" label="cart-details">
+          <button class="button-next-page shadow-5" aria-label="cart-details">
             <span>ver detalhes do carrinho</span>
           </button>
         </RouterLink>
