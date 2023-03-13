@@ -10,6 +10,7 @@
     <div v-if="!paymentPage" class="footer-page" style="margin-right: -8px">
       <RouterLink :to="{ name: 'PaymentPage' }">
         <button
+          label="payment"
           :disabled="amountItemsCart === 0"
           class="button-next-page-cart-amount shadow-15"
         >

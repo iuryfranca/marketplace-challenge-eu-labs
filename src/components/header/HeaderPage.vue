@@ -1,7 +1,7 @@
 <template>
   <div class="header-wrapper contentPage">
     <RouterLink :to="{ name: 'Home' }" class="logo-group">
-      <img src="../../assets/logo-americanas.svg" />
+      <img src="../../assets/logo-americanas.svg" alt="mktplace logo" />
       <h1>mktplace</h1>
     </RouterLink>
     <SearchInput />

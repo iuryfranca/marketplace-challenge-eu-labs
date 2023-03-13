@@ -12,6 +12,7 @@
         @blur="handleFocusOut"
         type="text"
         @input="handleChange"
+        label="search-input"
       />
       <div class="button-search"><Search :size="21" color="#ff0032" /></div>
     </div>

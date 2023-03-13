@@ -18,6 +18,7 @@
       size="sm"
       color="primary"
       @click="handleActionToCart('add')"
+      label="add-cart"
     >
       <Plus color="#121212" :size="22" />
     </q-btn>
@@ -31,6 +32,7 @@
         style="background-color: #e7e7e7"
         size="sm"
         @click="handleActionToCart('remove')"
+        label="remove-cart"
       >
         <Minus color="#121212" :size="22" />
       </q-btn>
@@ -40,6 +42,7 @@
         style="background-color: #e7e7e7"
         size="sm"
         @click="handleActionToCart('add')"
+        label="add-cart"
       >
         <Plus color="#121212" :size="22" />
       </q-btn>

@@ -26,6 +26,7 @@
       :width="350"
       :breakpoint="400"
       class="cart-drawer shadow-12"
+      label="drawer-controller"
     >
       <div class="cart-title-content">
         <h1>resumo carrinho</h1>
@@ -44,7 +45,7 @@
       </q-scroll-area>
       <div class="footer-page">
         <RouterLink :to="{ name: 'CartDetails' }">
-          <button class="button-next-page shadow-5">
+          <button class="button-next-page shadow-5" label="cart-details">
             <span>ver detalhes do carrinho</span>
           </button>
         </RouterLink>

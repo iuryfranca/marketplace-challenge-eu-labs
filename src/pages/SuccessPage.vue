@@ -60,6 +60,7 @@
       round
       size="1.5rem"
       @click="print"
+      label="print"
     >
       <Printer />
     </q-btn>

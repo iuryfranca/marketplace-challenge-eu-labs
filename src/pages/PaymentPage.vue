@@ -42,6 +42,7 @@
             style="margin-right: -1rem"
             :disabled="!isObjectEmpty"
             @click="handleFinallyPayment"
+            label="finally-payment"
           >
             finalizar compra
           </button>
@@ -50,6 +51,7 @@
             class="button-next-page-cart-amount shadow-15"
             style="margin-right: -1rem"
             @click="handleCancelPayment"
+            label="cancel-payment"
           >
             cancelar compra
           </button>
