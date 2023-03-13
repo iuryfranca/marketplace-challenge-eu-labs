@@ -11,6 +11,7 @@
       color="#FFFFFF"
       class="noHover"
       @click="drawer = !drawer"
+      label="drawer-controller"
     >
       <ShoppingBag :size="32" />
       <div v-if="amountItemsCart > 0" class="amount-items-cart">
@@ -26,7 +27,7 @@
       :width="350"
       :breakpoint="400"
       class="cart-drawer shadow-12"
-      label="drawer-controller"
+      label="drawer"
     >
       <div class="cart-title-content">
         <h1>resumo carrinho</h1>

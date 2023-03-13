@@ -6,13 +6,14 @@
       :class="currentUrl !== 'Home' ? 'disable-component-style' : ''"
     >
       <input
-        required
         class="input-content"
         @focus="handleFocusIn"
         @blur="handleFocusOut"
-        type="text"
         @input="handleChange"
+        type="text"
         label="search-input"
+        labelledby="search-input"
+        id="search-input"
       />
       <div class="button-search"><Search :size="21" color="#ff0032" /></div>
     </div>
