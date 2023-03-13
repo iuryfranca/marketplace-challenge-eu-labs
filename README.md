@@ -6,6 +6,7 @@
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#rocket-techs">Techs</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+  <a href="#candle-lighthouse">Lighthouse</a> &#xa0; | &#xa0;
   <a href="#hammer_and_wrench-builded-project">Builded Project</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-getting-started">Getting Started</a> &#xa0; &#xa0;
 </p>
@@ -38,6 +39,10 @@ The following technologies were used in the project:
 
 - [Node](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/lang/en/)
+
+## :candle: Lighthouse
+
+![Lighthouse Project](https://firebasestorage.googleapis.com/v0/b/playlist-songs-vue-3.appspot.com/o/marketplace-challenge-eu-labs%2FLighthouse.png?alt=media&token=566a359f-c1d2-406d-b139-dbf719a2b38b)
 
 ## :hammer_and_wrench: Builded Project
 
