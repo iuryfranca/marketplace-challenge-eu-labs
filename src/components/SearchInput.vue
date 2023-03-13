@@ -11,9 +11,7 @@
         @blur="handleFocusOut"
         @input="handleChange"
         type="text"
-        label="search-input"
-        labelledby="search-input"
-        id="search-input"
+        aria-label="search-input"
       />
       <div class="button-search"><Search :size="21" color="#ff0032" /></div>
     </div>
