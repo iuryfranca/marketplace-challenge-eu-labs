@@ -18,7 +18,7 @@
       :key="product.id"
     >
       <CardProduct v-if="products && !loading" :product="product" />
-      <CardProductSkeleton v-else />
+      <CardProductSkeleton v-if="loading" />
     </div>
   </div>
   <div class="error">{{ error }}</div>
