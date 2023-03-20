@@ -18,6 +18,8 @@
       :key="product.id"
     >
       <CardProduct v-if="products && !loading" :product="product" />
+    </div>
+    <div v-for="product in 20" :key="product">
       <CardProductSkeleton v-if="loading" />
     </div>
   </div>
