@@ -16,7 +16,7 @@
 ## :dart: About
 
 <p>
-this is an easy to understand project, i just needed to create a mini ecommerce with business rules that the company came up with. here you will find a list of products, controllers for adding and removing them from the cart, the cart itself, the cart details page, finally the payment and success page
+this is an easy to understand project, I needed to create an ecommerce with business rules that the company requested, here you will find a list of products, controllers for adding and removing them from the cart, the cart itself, the cart details page, finally the payment and success page
 </p>
 
 <p>
