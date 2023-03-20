@@ -7,7 +7,7 @@ export const useProductsStore = defineStore('products', {
   state: () => ({
     products: [] as ProductsCartProps[],
     productsFiltered: [] as ProductsCartProps[],
-    loading: false as boolean,
+    loading: true as boolean,
     error: null as string | unknown,
     searchTerm: '' as string,
   }),
