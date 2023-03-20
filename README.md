@@ -22,6 +22,16 @@ this is an easy to understand project, I needed to create an ecommerce with busi
 <p>
 to develop this, some technologies were used: Quasarjs, which was responsible for starting the project and making UI components available, Vuejs 3, Pinia for state management, lucide icons for the icons, axios to perform http requests and finally, it was used scss to style the application
 </p>
+
+-------
+
+<p>
+Esse é um projeto de fácil entendimento, precisava criar um ecommerce com as regras de negócio que a empresa solicitou, aqui você encontra uma lista de produtos, controladores para adicionar e retirar do carrinho, o próprio carrinho, a página de detalhes do carrinho, finalmente a página de pagamento e sucesso
+</p>
+
+<p>
+para desenvolvê-lo, foram utilizadas algumas tecnologias: Quasarjs, que foi responsável por iniciar o projeto e disponibilizar componentes de UI, Vuejs 3, Pinia para gerenciamento de estado, lucid icons para os ícones, axios para realizar requisições http e por fim, foi utilizado scss para estilizar o aplicativo
+</p>
    
     
 ## :rocket: Techs
